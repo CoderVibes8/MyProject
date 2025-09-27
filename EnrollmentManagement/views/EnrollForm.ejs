@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnrollPro : Enroll Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <section class="h-100 bg-dark">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+              <div class="card card-registration my-4">
+                <div class="row g-0">
+                  <div class="col-xl-6 d-none d-xl-block">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                      alt="Sample photo" class="img-fluid"
+                      style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="card-body p-md-5 text-black">
+
+                      <% if(error && error.length > 0) { %>
+                        <div class="alert alert-danger" style="text-align: center;" role="alert" id="flash-message">
+                          <%= locals.error %>
+                        </div>
+                      <% } %>
+
+                      <% if(success && success.length > 0) { %>
+                        <div class="alert alert-success" style="text-align: center;" role="alert" id="flash-message">
+                          <%= locals.success %>
+                        </div>
+                      <% } %>
+
+                      <h3 class="mb-5 text-uppercase" style="padding-top: 20px;">Student Enrollment Form</h3>
+                      
+                      <form action="/manage/StudentEnroll" method="POST">
+                        <div class="row">
+                          <div class="col-md-6 mb-3">
+                            <div data-mdb-input-init class="form-outline">
+                              <input type="text" name="firstName" id="form3Example1m" class="form-control form-control-lg" required/>
+                              <label class="form-label" for="form3Example1m">First name</label>
+                            </div>
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <div data-mdb-input-init class="form-outline">
+                              <input type="text" name="lastName" id="form3Example1n" class="form-control form-control-lg" required/>
+                              <label class="form-label" for="form3Example1n">Last name</label>
+                            </div>
+                          </div>
+                        </div>
+        
+                        <div data-mdb-input-init class="form-outline mb-3">
+                          <input type="text" name="email" id="form3Example8" class="form-control form-control-lg" required/>
+                          <label class="form-label" for="form3Example8">Email</label>
+                        </div>
+        
+                        <div class="column mb-4">
+                          <div class="row">
+    
+                            <div class="col-md-6 mb-3 pr-3">
+          
+                              <select name="level" data-mdb-select-init class="p-2" style="width: 200px;" required>
+                                <option>Year Level</option>
+                                <option value="1">1st Year</option>
+                                <option value="2">2nd Year</option>
+                                <option value="3">3rd Year</option>
+                                <option value="4">4th Year</option>
+                              </select>
+          
+                            </div>                       
+
+                          <div class="mb-4">
+        
+                            <select name="gender" data-mdb-select-init class="p-2" style="width: 220px;" required>
+                              <option>Gender</option>
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                            </select>
+        
+                          </div>
+
+                        </div>
+
+                        <div class="column">
+        
+                          <select name="course" data-mdb-select-init class="p-2" style="width: 100%;" required>
+                            <option>Courses</option>
+                            <option value="BSIT">BS Information Technology</option>
+                            <option value="BSME">BS Marine Engineering</option>
+                            <option value="BSED">BS Education</option>
+                            <option value="BSN">BS Nursing</option>
+                            <option value="BSHM">BS Hotel and Tourism Management</option>
+                            <option value="BSCRIM">BS Criminology</option>
+                          </select>
+      
+                        </div>
+
+                      </div>
+
+                        <a href="/manage" class="btn btn-warning btn-lg" style="width: 100%; margin-bottom: 10px;">Cancel</a>
+                        <button type="submit"  data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg ms-2" style="width: 100%;">Submit</button>
+                      </form>
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        setTimeout(function() {
+          var flashMessage = document.getElementById('flash-message');
+          if(flashMessage){
+            setTimeout(function() {
+              flashMessage.style.display = 'none';
+            });
+          }
+        }, 3000);
+      </script>
+</body>
+</html>

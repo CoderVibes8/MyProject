@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+
+        <h1 class="mb-4">Update Student</h1> 
+        
+        <form action="/manage/students/update/<%= locals.student.id %>/<%= locals.student.course %>?_method=PUT" method="POST">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input 
+                    name="firstName"
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    value="<%= locals.student.firstname %>"
+                    required
+                />
+            </div>
+        
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input
+                    name="lastName"
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    value="<%= locals.student.lastname %>" 
+                    required
+                />
+            </div>
+        
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                    name="email"
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    value="<%= locals.student.email %>"
+                    readonly
+                />
+            </div>
+        
+            <div class="form-group">
+                <label for="yearlevel">Year Level</label>
+                <select name="yearlevel" class="form-control" id="yearlevel" required>
+                    <option value="1" <%= locals.student.level === 1 ? 'selected' : '' %>>1st Year</option>
+                    <option value="2" <%= locals.student.level === 2 ? 'selected' : '' %>>2nd Year</option>
+                    <option value="3" <%= locals.student.level === 3 ? 'selected' : '' %>>3rd Year</option>
+                    <option value="4" <%= locals.student.level === 4 ? 'selected' : '' %>>4th Year</option>
+                </select>
+            </div>
+        
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select name="gender" class="form-control" id="gender" required>
+                    <option value="Male" <%= locals.student.gender === 'Male' ? 'selected' : '' %>>Male</option>
+                    <option value="Female" <%= locals.student.gender === 'Female' ? 'selected' : '' %>>Female</option>
+                    <option value="Secret" <%= locals.student.gender === 'Secret' ? 'selected' : '' %>>Prefer not to say</option>
+                </select>
+            </div>
+        
+            <div class="form-group">
+                <label for="course">Courses</label>
+                <select name="course" class="form-control" id="course" required>
+                    <option value="BSIT" <%= locals.student.course === 'BSIT' ? 'selected' : '' %>>BS Information Technology</option>
+                    <option value="BSME" <%= locals.student.course === 'BSME' ? 'selected' : '' %>>BS Marine Engineering</option>
+                    <option value="BSED" <%= locals.student.course === 'BSED' ? 'selected' : '' %>>BS Education</option>
+                    <option value="BSN" <%= locals.student.course === 'BSN' ? 'selected' : '' %>>BS Nursing</option>
+                    <option value="BSHM" <%= locals.student.course === 'BSHM' ? 'selected' : '' %>>BS Hotel and Tourism Management</option>
+                    <option value="BSCRIM" <%= locals.student.course === 'BSCRIM' ? 'selected' : '' %>>BS Criminology</option>
+                </select>
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary" onclick="window.history.back()">Cancel</button>
+        </form>
+        
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

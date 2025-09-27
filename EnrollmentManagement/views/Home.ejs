@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link href="assets/img/Logo.png" rel="icon" type="image/png">
+
+
+    <title>EnrollPro</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #343a40;
+        }
+        .navbar-brand,
+        .nav-link {
+            color: #012970 !important;
+            font-weight: bold;
+            font-size: 26px;
+        }
+        .hero {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.25rem;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            transition: transform 0.2s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card-title {
+            font-size: 1.5rem;
+        }
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .icon {
+            font-size: 3rem;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        /* New styles for alignment */
+        .container {
+            max-width: 1200px;
+        }
+        .row {
+            justify-content: center; /* Center align the row */
+        }
+        .card-body {
+            padding: 2rem; /* Add padding to the card body */
+        }
+        h2 {
+            font-size: 2rem; /* Adjust h2 size */
+            color: #343a40; /* Color for h2 */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg bg-white">
+        <a class="navbar-brand text-dark" style="margin-left: 20px; font-size: 30px;" href="#">EnrollPro</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1>Welcome to EnrollPro!</h1>
+            <p>Your solution for efficient course management and student enrollment analytics.</p>
+        </div>
+    </div>
+
+    <!-- Main Section -->
+    <div class="container mb-5">
+        <h2 class="text-center mb-4">Manage Your Courses and Students</h2>
+        <div class="row">
+            <!-- Student Management Card -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-user-graduate icon"></i>
+                        <h5 class="card-title">Student Management</h5>
+                        <p class="card-text">Easily manage student profiles and enrollment details.</p>
+                        <a href="/manage" class="btn btn-primary">Manage Students</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Dashboard Card -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-chart-line icon"></i>
+                        <h5 class="card-title">Analytics Dashboard</h5>
+                        <p class="card-text">Gain insights into enrollment trends and course performance.</p>
+                        <a href="/dashboard" class="btn btn-primary">View Dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer text-dark bg-white">
+        <div class="copyright">
+            &copy; Copyright <strong><span>EnrollPro</span></strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+            Designed by <a href="https://bootstrapmade.com/">CITE Students Made</a>
+          </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

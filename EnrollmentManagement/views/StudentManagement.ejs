@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>EnrollPro : Student Management</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/Logo.png" rel="icon" type="image/png">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../public/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../public/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../public/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../public/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../public/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../public/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../public/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../public/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Updated: Apr 20 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between mt-2 bt-1">
+      <a href="/home" class="logo d-flex align-items-center">
+        <span class="d-none d-lg-block" style="font-size: 30px;">EnrollPro</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar ">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="/">
+          <i class="bi bi-house-door-fill"></i>
+          <span>Home</span>
+        </a>
+      </li><!-- End Home Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link " href="/dashboard">
+          <i class="bi bi-bar-chart-fill"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link " href="/manage" style="background-color: #dddd;">
+          <i class="bi bi-folder-fill"></i>
+          <span>Student Management</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link " href="/manage/StudentEnroll">
+          <i class="bi bi-person-fill-add"></i>
+          <span>Enroll Student</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Student Management</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active"><a href="/manage">Student Management</a></li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <div class="col-lg-12">
+      <div class="row">
+
+        <!-- Course 1 -->
+        <div class="col-lg-4 course-card">
+
+          <div class="card">
+            <div class="card-body">
+              <img src="img/Cite.png" class="card-img-top" alt="...">
+              <h5 class="card-title" style="padding-top: 15px;">College of Information Technology</h5>
+              <p class="card-text" style="padding-bottom: 30px;">"Unlock endless opportunities with an Information Technology course – master the skills driving today's digital world and shape the future of technology."</p>
+              <form action="/manage/setcourse" method="POST">
+                <input type="hidden" name="course" value="BSIT">
+                <button type="submit" name="submit" class="btn btn-primary">View</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <!--Course 2-->
+        <div class="col-lg-4 course-card">
+
+          <div class="card">
+            <div class="card-body">
+              <img src="img/Marine.png" class="card-img-top" style="max-height: 400px;" alt="...">
+              <h5 class="card-title" style="padding-top: 25px;">College of Marine Engineering</h5>
+              <p class="card-text">"Embark on a journey to innovation and leadership with a degree from the College of Marine Engineering – where you'll learn to design, maintain, and operate the world's most advanced marine vessels."</p>
+              <form action="/manage/setcourse" method="post">
+                <input type="hidden" name="course" value="BSME">
+                <button type="submit" name="submit" class="btn btn-primary">View</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <!--Course 3-->
+        <div class="col-lg-4 course-card">
+
+          <div class="card">
+            <div class="card-body">
+              <img src="img/Coed.png" class="card-img-top" style="max-height: 330px;" alt="...">
+              <h5 class="card-title">College of Education</h5>
+              <p class="card-text">
+                "Empower the next generation by pursuing a degree at the College of Education – where you’ll gain the knowledge and skills to inspire, teach, and shape the future of education."</p>
+                <form action="/manage/setcourse" method="post">
+                  <input type="hidden" name="course" value="BSED">
+                  <button type="submit" name="submit" class="btn btn-primary">View</button>
+                </form>
+            </div>
+          </div>
+
+        </div>
+
+        <!--Course 4-->
+        <div class="col-lg-4 course-card">
+
+          <div class="card pb-3">
+            <div class="card-body">
+              <img src="img/Cahs.jpg" class="card-img-top" style="max-height: 400px;" alt="...">
+              <h5 class="card-title" >College of Allied Health  Sciences</h5>
+              <p class="card-text">"Transform lives and promote wellness with a degree from the College of Allied Health Sciences – where you'll develop the expertise to support and advance healthcare in diverse, in-demand fields."</p>
+              <form action="/manage/setcourse" method="post">
+                <input type="hidden" name="course" value="BSN">
+                <button type="submit" name="submit" class="btn btn-primary">View</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <!--Course 5-->
+        <div class="col-lg-4 course-card">
+
+          <div class="card">
+            <div class="card-body">
+              <img src="img/Htm.jpg" class="card-img-top" alt="...">
+              <h5 class="card-title">Hospitality and Tourism Management</h5>
+              <p class="card-text">"Open doors to a world of opportunities with a degree in Hospitality and Tourism Management – where you'll learn to create unforgettable experiences and lead in the global travel and hospitality industry."</p>
+              <form action="/manage/setcourse" method="post">
+                <input type="hidden" name="course" value="BSHM">
+                <button type="submit" name="submit" class="btn btn-primary">View</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <!--Course 6-->
+        <div class="col-lg-4 course-card">
+
+          <div class="card">
+            <div class="card-body">
+              <img src="img/Crim.png.png" class="card-img-top" alt="...">
+              <h5 class="card-title">College of Criminal Justice Education</h5>
+              <p class="card-text">"Make a difference in society with a degree from the College of Criminal Justice Education – where you'll gain the knowledge and skills to uphold justice, protect communities, and lead in law enforcement and legal professions."</p>
+              <form action="/manage/setcourse" method="post">
+                <input type="hidden" name="course" value="BSCRIM">
+                <button type="submit" name="submit" class="btn btn-primary">View</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>EnrollPro</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">CITE Students Made</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../public/assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../public/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../public/assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="../public/assets/vendor/echarts/echarts.min.js"></script>
+  <script src="../public/assets/vendor/quill/quill.js"></script>
+  <script src="../public/assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="../public/assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="../public/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../public/assets/js/main.js"></script>
+  <script src=""></script>
+
+</body>
+
+</html>
