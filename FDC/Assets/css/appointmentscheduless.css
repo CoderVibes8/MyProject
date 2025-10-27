@@ -1,0 +1,547 @@
+/* Schedule Container */
+.schedule-container {
+    max-width: 1200px;
+    /* wide but centered */
+    margin: 0 auto;
+    padding: 20px;
+    align-items: center;
+
+    /* ✅ scrollable content fix */
+    max-height: 100vh;     /* never exceed screen height */
+    overflow-y: auto;      /* add scroll only if needed */
+    overflow-x: hidden;    /* prevent horizontal scroll */
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+/* Header */
+/* Section Wrapper */
+.header-schedule {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+}
+
+/* Title */
+.header-schedule .title {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: #374151;
+    margin-bottom: 10px;
+}
+
+/* Section Divider */
+.header-schedule hr {
+    border: none;
+    border-top: 2px solid #e5e7eb;
+    margin: 10px 0 20px;
+}
+
+/* Subtitles */
+.header-schedule h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #6b7280;
+    margin-bottom: 12px;
+}
+
+/* Date Filters */
+.appointment_date {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.appointment_date-btn {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.appointment_date-btn:hover {
+    background: #eef2ff;
+    border-color: #6366f1;
+    color: #4f46e5;
+}
+
+.appointment_date-btn.active {
+    background: #4f46e5;
+    color: #fff;
+    border-color: #4f46e5;
+}
+
+/* Date dots */
+.appointment_date-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-today {
+    background: #10b981;
+}
+
+/* green */
+.dot-upcomming {
+    background: #3b82f6;
+}
+
+/* yellow */
+
+/* Status Filters */
+.filter-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.appointment_status-btn {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.appointment_status-btn:hover {
+    background: #ecfdf5;
+    border-color: #10b981;
+    color: #065f46;
+}
+
+/* Status dots */
+.appointment_status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-upcoming {
+    background: #3b82f6;
+}
+
+
+.dot-approved {
+    background: #10b981;
+}
+
+
+.dot-pending {
+    background: #f59e0b;
+}
+
+
+
+
+.legend-schedule .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.d-online {
+    background: #38bdf8;
+}
+
+.d-clinic {
+    background: #4ade80;
+}
+
+.muted {
+    color: #6b7280;
+    font-size: 0.8rem;
+    /* consistent size */
+}
+
+/* Schedule List */
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* spacing between cards */
+}
+
+/* Card */
+.schedule-list .card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 14px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    gap: 20px;
+    flex-direction: row;
+    margin-bottom: 0;
+}
+
+/* Time block */
+.schedule-time {
+    flex: 0 120px 0;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.schedule-time .t-main {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1e40af;
+    /* deep blue */
+}
+
+.schedule-time .t-sub {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+/* Info block (middle) */
+.schedule-info {
+    flex: 1;
+    /* take remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.schedule-info .name {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+}
+
+/* Badges */
+.meta .type,
+.meta .status {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    /* pill shape */
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.type.online {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.type.clinic {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.status.good {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status.warn {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+/* Actions (right side buttons) */
+.actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+    margin-left: auto;
+    /* ✅ ensures buttons stick to right */
+}
+
+.schedule-btn {
+    padding: 6px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    color: black;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.schedule-btn.primary {
+    background: #0ea5e9;
+    color: #fff;
+    border: none;
+}
+
+.schedule-btn.green {
+    background: #16a34a;
+    color: #fff;
+    border: none;
+}
+
+.schedule-btn:hover {
+    opacity: 0.9;
+}
+
+/* Section titles for schedule (Today / Upcoming) */
+.appointed-schedule {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #444;
+    margin: 20px 0 15px;
+    padding-left: 10px;
+    border-left: 4px solid #5c99ee;
+}
+
+.appointed-schedule:hover {
+    color: #5c99ee;
+    transition: color 0.3s ease;
+}
+
+
+
+
+
+/* Result */
+#resultModal .modal-content {
+    border-radius: 12px;
+    padding: 20px;
+    border: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+#resultModal .modal-header {
+    justify-content: center;
+    text-align: center;
+}
+
+#resultModal .modal-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+#resultModal .pdf-icon {
+    margin: 15px auto;
+    width: 80px;
+    height: 80px;
+    background: #007bff15;
+    /* subtle blue tint */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#resultModal .pdf-icon svg {
+    width: 40px;
+    height: 40px;
+    fill: #007bff;
+}
+
+#resultModal .modal-body h5 {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+#resultModal .modal-body p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Full-width Blue Button */
+#resultModal #downloadPdf {
+    display: block;
+    width: 100%;
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: 500;
+    padding: 12px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+#resultModal #downloadPdf:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+
+/* ============================= */
+/* 📱 Responsive Breakpoints */
+/* ============================= */
+
+/* --- Max 900px --- */
+@media (max-width: 1020px) {
+  .schedule-container {
+    margin-left: 300px; /* ✅ keep space for sidebar */
+  }
+
+  .appointment_date,
+  .filter-buttons {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .appointment_date-btn,
+  .appointment_status-btn {
+    flex: 1 1 45%; /* two per row */
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .schedule-list .card {
+    gap: 15px;
+    padding: 12px 15px;
+  }
+
+  .actions {
+    gap: 8px;
+  }
+
+  .schedule-btn {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
+}
+
+/* --- Max 768px --- */
+@media (max-width: 768px) {
+  .schedule-container {
+    margin-left: 300px; /* ✅ still leave room for sidebar */
+  }
+
+  .header-schedule .title {
+    font-size: 18px;
+  }
+
+  .header-schedule h4 {
+    font-size: 14px;
+  }
+
+  .schedule-list .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .schedule-time {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .info {
+    width: 100%;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .schedule-btn {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+/* --- Max 480px --- */
+@media (max-width: 480px) {
+  .schedule-container {
+    margin-left: 0 !important; /* ✅ sidebar collapses on phones */
+  }
+
+  .header-schedule {
+    padding: 15px;
+    width: 320px;
+    margin-left: -20px;
+  }
+
+  .header-schedule .title {
+    font-size: 16px;
+  }
+
+  .appointed-schedule {
+    margin-left: -10px;
+  }
+
+  .appointment_date,
+  .filter-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .appointment_date-btn,
+  .appointment_status-btn {
+    width: 100%;
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .schedule-list .card {
+    padding: 10px;
+    gap: 10px;
+    width: 320px;
+    margin-left: -20px;
+  }
+
+  .schedule-time {
+    padding: 8px 10px;
+  }
+
+  .schedule-time .t-main {
+    font-size: 0.9rem;
+  }
+
+  .schedule-time .t-sub {
+    font-size: 0.75rem;
+  }
+
+  .info .name {
+    font-size: 0.9rem;
+  }
+
+  .meta {
+    font-size: 0.75rem;
+  }
+
+  .schedule-btn {
+    font-size: 0.75rem;
+    padding: 6px;
+  }
+}

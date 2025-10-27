@@ -1,0 +1,74 @@
+/* 📱 Mobile ≤480px */
+@media (max-width: 480px) {
+    .profile-container {
+        width: 100%;
+        margin-left: 0 !important; /* no sidebar on mobile */
+        padding: 10px;
+    }
+
+    .profile-container .card {
+        margin-bottom: 10px;
+    }
+
+    .profile-container h6 {
+        font-size: 12px;
+    }
+
+    .profile-container .text-secondary,
+    .profile-container input.form-control {
+        font-size: 12px;
+    }
+
+    .profile-container button.btn {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+}
+
+/* 📲 Tablet (481px – 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .profile-container {
+        width: calc(100% - 300px);
+        margin-left: 200px !important;
+        padding: 16px;
+    }
+
+    .profile-container h6 {
+        font-size: 14px;
+    }
+
+    .profile-container .text-secondary,
+    .profile-container input.form-control {
+        font-size: 14px;
+    }
+
+    /* 👤 Profile Picture smaller */
+    .profile-container img.rounded-circle {
+        width: 90px !important;
+        height: 90px !important;
+    }
+}
+
+/* 💻 Small Desktop (769px – 1020px) */
+@media (min-width: 769px) and (max-width: 1020px) {
+    .profile-container {
+        width: calc(100% - 300px);
+        margin-left: 280px !important;
+        padding: 20px;
+    }
+
+    .profile-container h6 {
+        font-size: 15px;
+    }
+
+    .profile-container .text-secondary,
+    .profile-container input.form-control {
+        font-size: 15px;
+    }
+
+    /* 👤 Profile Picture slightly smaller */
+    .profile-container img.rounded-circle {
+        width: 130px !important;
+        height: 130px !important;
+    }
+}

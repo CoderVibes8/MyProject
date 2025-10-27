@@ -1,0 +1,105 @@
+/* About Section Wrapper */
+.about-content {
+    margin: 40px auto;
+    max-width: 450px;
+    padding: 0 16px;
+}
+
+/* Card-About */
+.card-about {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    transition: transform 0.2s ease;
+}
+
+.card-about:hover {
+    transform: translateY(-2px);
+}
+
+/* SVG Art */
+.art {
+    flex-shrink: 0;
+}
+
+/* Title and Text */
+.title-about {
+    margin: 0 0 12px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.text-about {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* Info Rows */
+.rows-about {
+    margin: 16px 0;
+    display: grid;
+    gap: 10px;
+}
+
+.row-about {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Actions */
+.actions-about {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-about {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #0ea5e9;
+    color: #fff;
+    transition: background 0.2s ease, transform 0.05s ease;
+}
+
+.btn-about:hover {
+    background: #0369a1;
+}
+
+.btn-about:active {
+    transform: translateY(1px);
+}
+
+.btn-about.alt {
+    background: #f8fafc;
+    color: #0f172a;
+    border: 1px solid #e2e8f0;
+}
+
+.btn-about.alt:hover {
+    background: #e2e8f0;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 500px) {
+    .card-about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .actions-about {
+        justify-content: center;
+    }
+}

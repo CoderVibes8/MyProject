@@ -1,0 +1,493 @@
+/* Chat Messages */
+/* === CHATBOX CONTAINER === */
+.chatbox-container {
+    display: flex;
+    height: 90vh;
+    width: 100%;
+    background: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+/* === SIDEBAR === */
+.chatbox-sidebar {
+    width: 280px;
+    background: #fff;
+    border-right: 1px solid #ddd;
+    display: flex;
+    border-radius: 10px 10px 0 0;
+    flex-direction: column;
+}
+
+.chatbox-sidebar-header {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+
+}
+
+.chatbox-title {
+    font-size: 18px;
+    margin: 0;
+}
+
+.chatbox-subtitle {
+    font-size: 12px;
+    color: #888;
+    margin: 5px 0 10px;
+}
+
+.chatbox-stats {
+    display: flex;
+    gap: 15px;
+}
+
+.chatbox-stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: #666;
+}
+
+.chatbox-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #bbb;
+}
+
+.chatbox-dot.online {
+    background: #4caf50;
+}
+
+.chatbox-dot.offline {
+    background: #999;
+}
+
+/* === SEARCH === */
+.chatbox-search {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.chatbox-search-input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* === CONTACTS LIST === */
+.chatbox-contacts {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.chatbox-contact {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #f1f1f1;
+    cursor: pointer;
+    transition: background 0.2s;
+
+}
+
+.chatbox-contact:hover {
+    background: #f5f5f5;
+}
+
+.chatbox-contact.active {
+    background: #e8f0fe;
+}
+
+.chatbox-avatar {
+    width: 40px;
+    height: 40px;
+    background: #5c99ee;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 10px;
+    position: relative;
+    font-size: 14px;
+}
+
+.chatbox-status {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.chatbox-status.online {
+    background: #4caf50;
+}
+
+.chatbox-status.offline {
+    background: #999;
+}
+
+.chatbox-contact-info {
+    flex: 1;
+}
+
+.chatbox-name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.chatbox-role {
+    font-size: 12px;
+    color: #777;
+}
+
+.chatbox-lastmsg {
+    font-size: 12px;
+    color: #555;
+    margin-top: 2px;
+}
+
+.chatbox-time {
+    font-size: 12px;
+    color: #999;
+    margin-left: 5px;
+}
+
+.chatbox-badge {
+    background: #e53935;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 12px;
+    margin-left: 6px;
+}
+
+/* === CHAT AREA === */
+.chatbox-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #f4f6f9;
+}
+
+/* HEADER */
+.chatbox-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    border-radius: 10px 10px 0 0;
+}
+
+.chatbox-header-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbox-breadcrumb {
+    font-size: 12px;
+    color: #666;
+}
+
+.chatbox-separator {
+    margin: 0 5px;
+}
+
+.chatbox-user {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    gap: 10px;
+}
+
+.chatbox-user-avatar {
+    width: 35px;
+    height: 35px;
+    background: #5c99ee;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.chatbox-user-name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.chatbox-user-status {
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.chatbox-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.chatbox-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* === MESSAGES === */
+.chatbox-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.chatbox-message {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.chatbox-message.sent {
+    justify-content: flex-end;
+}
+
+.chatbox-msg-avatar {
+    width: 35px;
+    height: 35px;
+    background: #5c99ee;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.chatbox-msg-content {
+    max-width: 65%;
+    background: #fff;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    position: relative;
+}
+
+.chatbox-message.sent .chatbox-msg-content {
+    background: #d2e3fc;
+}
+
+.chatbox-msg-time {
+    font-size: 11px;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* === INPUT AREA === */
+.chatbox-input-area {
+    padding: 10px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    display: flex;
+    gap: 10px;
+}
+
+.chatbox-input {
+    flex: 1;
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    outline: none;
+}
+
+.chatbox-send {
+    background: #5c99ee;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === MOBILE (≤480px) — Chat Flow Fix === */
+@media (max-width: 480px) {
+    .chatbox-container {
+        flex-direction: column;
+        height: 70vh;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    /* Sidebar (Contacts) */
+    .chatbox-sidebar {
+        width: 100%;
+        height: 100%;
+        border-right: none;
+        border-radius: 0;
+        display: block;
+    }
+
+    /* Chat Area (Hidden by default) */
+    .chatbox-main {
+        display: none;
+        /* Hidden until a contact is selected */
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+    }
+
+    /* Back Button for Mobile */
+    .chatbox-back-btn {
+        display: inline-flex;
+        /* inline + flex for icon + text */
+        align-items: center;
+        gap: 5px;
+        background: none;
+        color: #0284c7;
+
+        font-size: 20px;
+        font-weight: 600;
+        padding: 5px 12px;
+        cursor: pointer;
+        margin-top: 12px;
+    }
+
+    /* 🔹 Header: make Back + Info inline in one row */
+    .chatbox-header {
+        display: flex !important;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding: 10px 14px;
+        gap: 10px;
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .chatbox-header-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        flex: 1;
+    }
+
+    .chatbox-breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 13px;
+        margin-left: -80px;
+        color: #444;
+    }
+
+    .chatbox-user {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        color: #666;
+        margin-top: -10px;
+        margin-left: 10px;
+    }
+
+    .chatbox-msg-content {
+        max-width: 80%;
+        font-size: 13px;
+    }
+
+    .chatbox-input {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    .chatbox-send {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+}
+
+
+
+/* === TABLET (≤768px) === */
+@media (min-width: 481px) and (max-width: 768px) {
+    .chatbox-container {
+        flex-direction: row;
+        height: 100vh;
+    }
+
+    .chatbox-sidebar {
+        width: 220px;
+    }
+
+    .chatbox-title {
+        font-size: 16px;
+    }
+
+    .chatbox-contact {
+        padding: 10px;
+    }
+
+    .chatbox-msg-content {
+        max-width: 70%;
+        font-size: 14px;
+    }
+
+    .chatbox-input {
+        font-size: 14px;
+    }
+}
+
+/* === DESKTOP (≥900px) === */
+@media (min-width: 769px) and (max-width: 1020px) {
+    .chatbox-container {
+        margin-left: 300px;
+        /* push content to make room for sidebar */
+        height: calc(100vh - 800px);
+        /* optional: adjust to fit */
+    }
+
+    .chatbox-sidebar {
+        width: 300px;
+        /* fixed sidebar width */
+    }
+}

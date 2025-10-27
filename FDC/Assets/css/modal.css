@@ -1,0 +1,46 @@
+.modal-message .modal-dialog {
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) !important;
+    margin: 0px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  /* line 106, ../../Arafath/CL/january 2020/241. Medical/HTML/scss/_contact.scss */
+  .modal-message .modal-dialog .modal-content .modal-header {
+    text-align: center;
+    display: block;
+    border-bottom: none;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  /* line 112, ../../Arafath/CL/january 2020/241. Medical/HTML/scss/_contact.scss */
+  .modal-message .modal-dialog .modal-content .modal-header .close {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    padding: 0px;
+    color: #fff;
+    opacity: 1;
+    cursor: pointer;
+  }
+  
+  /* line 121, ../../Arafath/CL/january 2020/241. Medical/HTML/scss/_contact.scss */
+  .modal-message .modal-dialog .modal-content .modal-header h2 {
+    display: block;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  
+  /* line 126, ../../Arafath/CL/january 2020/241. Medical/HTML/scss/_contact.scss */
+  .modal-message .modal-dialog .modal-content .modal-header p {
+    display: block;
+  }
+  
+  /* line 133, ../../Arafath/CL/january 2020/241. Medical/HTML/scss/_contact.scss */
+  .contact-section {
+    padding: 130px 0 100px;
+  }

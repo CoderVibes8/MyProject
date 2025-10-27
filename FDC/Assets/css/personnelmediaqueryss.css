@@ -1,0 +1,187 @@
+/* 📱 Mobile view (≤480px): uniform 310px width */
+@media (max-width: 480px){
+  /* Make dashboard cards stack vertically */
+  .section.dashboard .row {
+    flex-direction: column;
+    align-items: flex-start; /* keep left-aligned */
+  }
+
+  .section.dashboard .col-3 {
+    width: 100% !important;
+    
+  }
+
+  /* Appointment cards */
+  .appointment-card {
+    width: 310px !important;
+    margin-left: 6px !important;
+    
+  }
+
+  /* Remove side margin for content */
+  .personnel-date-sched {
+    margin-left: 0 !important;
+    padding: 0; /* remove extra padding */
+  }
+
+  /* Quick Stats → single column, uniform size */
+  .stats-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 310px !important;
+    margin-left: 12px;
+    
+  }
+
+  .stat-card {
+    width: 100% !important;
+    margin-left: 12px;
+    
+  }
+
+  /* Consultations & Schedule → stacked, uniform size */
+  .grid-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 310px !important;
+    margin-left: 12px;
+  }
+
+  .consult-card,
+  .schedule-card {
+    width: 310px !important;
+    margin-left: 12px;
+  }
+
+  /* Table scrollable on small screens */
+  .schedule-card table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* Adjust font sizes for readability */
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-subtitle,
+  .meta {
+    font-size: 0.85rem;
+  }
+
+  .stat-card .k {
+    font-size: 0.9rem;
+  }
+
+  .stat-card .v {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+
+/* 📱 Tablet view: max-width 768px */
+@media (min-width:500px) and (max-width: 768px) {
+  
+
+  .section.dashboard .row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important; /* center cards */
+    gap: 16px; /* smaller gap for tablets */
+  }
+
+  .section.dashboard .col-3 {
+    width: auto !important;
+    flex: 0 0 auto;
+  }
+
+  .appointment-card {
+    width: 260px !important; /* slightly smaller for tablets */
+    margin: 0 auto;
+  }
+
+  .personnel-date-sched {
+    margin-left: 0 !important; /* handled by section margin */
+    padding: 15px;
+  }
+
+  .stats-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* two per row for smaller width */
+    gap: 14px;
+  }
+
+  .stats-card .stat-card {
+    width: 100% !important;
+  }
+
+  .grid-card {
+    display: grid;
+    grid-template-columns: 1fr; /* single column for compact layout */
+    gap: 20px;
+  }
+
+  .consult-card,
+  .schedule-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+
+.section.dashboard {
+  overflow-x: hidden;
+}
+/* 💻 Small desktop view: max-width 1020px */
+@media (min-width: 769px) and (max-width: 1020px) {
+  .section.dashboard{
+    margin-left: 280px;
+    
+  }
+  .section.dashboard .row {
+    display: flex !important;
+    flex-wrap: wrap !important; /* allow wrapping if too narrow */
+    justify-content: center !important; /* center them horizontally */
+    gap: 20px; /* space between cards */
+  }
+
+  .section.dashboard .col-3 {
+    width: auto !important; /* prevent full width */
+    flex: 0 0 auto; /* maintain card size */
+  }
+
+  .appointment-card {
+    width: 280px !important; /* consistent card width */
+    margin-left: -280px;
+  }
+
+  .personnel-date-sched {
+    margin-left: 50px !important;
+    padding: 20px;
+  }
+
+  .stats-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .stats-card .stat-card{
+    width: 180px;
+  }
+
+  .grid-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .consult-card,
+  .schedule-card {
+    width: 100%;
+  }
+}

@@ -1,0 +1,175 @@
+/* ================================
+   👨‍⚕️ Personnel Profile Responsive Styles
+   Scoped only to .section.dashboard.personnel-profile
+=================================== */
+
+/* 💻 Default layout (desktop) */
+.section.dashboard.personnel-profile {
+    padding: 20px;
+}
+
+.section.dashboard.personnel-profile .card {
+    border-radius: 10px;
+}
+
+.section.dashboard.personnel-profile h6 {
+    font-weight: 600;
+}
+
+/* 💻 Small desktop (769px–1020px) */
+@media (min-width: 769px) and (max-width: 1020px) {
+    .section.dashboard.personnel-profile {
+        margin-left: 280px !important;
+        padding: 20px;
+    }
+
+    .section.dashboard.personnel-profile img.rounded-circle {
+        width: 200px !important;
+        height: 200px !important;
+    }
+
+    .section.dashboard.personnel-profile .card.card-picture {
+        width: 570px;
+        margin-left: -195px;
+        /* centers the card horizontally */
+        margin-right: auto;
+        /* keeps balance */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* ✅ Fix card alignment bug without changing your layout intent */
+    .section.dashboard.personnel-profile .card.card-text {
+        width: 570px;
+        margin-left: auto;
+        /* centers the card horizontally */
+        margin-right: auto;
+        /* keeps balance */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .section.dashboard.personnel-profile .card{
+        width: 530px;
+    }
+
+
+    .section.dashboard.personnel-profile h6 {
+        font-size: 15px;
+    }
+
+    .section.dashboard.personnel-profile .text-secondary,
+    .section.dashboard.personnel-profile input.form-control {
+        font-size: 15px;
+    }
+}
+
+
+/* 📲 Tablet (481px–768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .section.dashboard.personnel-profile {
+        margin-left: 280px !important;
+        padding: 15px;
+    }
+
+    .section.dashboard.personnel-profile .row.gutters-sm {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .section.dashboard.personnel-profile .col-md-4,
+    .section.dashboard.personnel-profile .col-md-8 {
+        width: 100%;
+    }
+
+    /* 🖼️ Smaller version of the large profile layout */
+    .section.dashboard.personnel-profile img.rounded-circle {
+        width: 150px !important;
+        height: 150px !important;
+    }
+
+    /* Profile picture card (slightly smaller version of desktop) */
+    .section.dashboard.personnel-profile .card.card-picture {
+        width: 420px;
+        margin-left: -140px;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Text card (aligned and scaled down) */
+    .section.dashboard.personnel-profile .card.card-text {
+        width: 420px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* General card container size */
+    .section.dashboard.personnel-profile .card {
+        width: 400px;
+    }
+
+    /* Adjusted text size for readability */
+    .section.dashboard.personnel-profile h6 {
+        font-size: 13px;
+    }
+
+    .section.dashboard.personnel-profile .text-secondary,
+    .section.dashboard.personnel-profile input.form-control {
+        font-size: 13px;
+    }
+}
+
+
+/* 📱 Mobile (≤480px) */
+@media (max-width: 480px) {
+    .section.dashboard.personnel-profile {
+        margin-left: 0 !important;
+        /* no sidebar offset */
+        padding: 10px;
+    }
+
+    /* 🧩 Make personnel-profile cards larger */
+    .section.dashboard.personnel-profile .card {
+        width: 100%;
+        max-width: 900px;
+        /* increase overall card width */
+        margin: 0 auto;
+        /* keep centered inside container */
+    }
+
+    .section.dashboard.personnel-profile .row.gutters-sm {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section.dashboard.personnel-profile .col-md-4,
+    .section.dashboard.personnel-profile .col-md-8 {
+        width: 100%;
+    }
+
+    .section.dashboard.personnel-profile h6 {
+        font-size: 13px;
+    }
+
+    .section.dashboard.personnel-profile .text-secondary,
+    .section.dashboard.personnel-profile input.form-control {
+        font-size: 12px;
+    }
+
+    .section.dashboard.personnel-profile button.btn {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+}

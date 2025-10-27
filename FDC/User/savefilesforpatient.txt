@@ -1,0 +1,13 @@
+<!-- Doctor Dropdown Here -->
+                                <!-- <div class="form-group">
+                                    <label for="doctor" class="form-label fw-bold">Choose Doctor</label>
+                                    <select class="form-select" id="doctor" name="doctor" required>
+                                        <option value="" disabled selected>-- Select a Doctor --</option>
+                                        <?php foreach ($doctors as $doctor): ?>
+                                            <option value="<?= "Dr." . ' ' . htmlspecialchars($doctor['first_name']) . ' ' . htmlspecialchars($doctor['last_name']) . "(" . htmlspecialchars($doctor['specialty']) . ")"; ?>">
+                                                <?= "Dr. " . ' ' . htmlspecialchars($doctor['first_name']) . ' ' . htmlspecialchars($doctor['last_name']) ?>
+                                                (<?= htmlspecialchars($doctor['specialty']); ?>)
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div> -->

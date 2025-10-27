@@ -1,0 +1,30 @@
+/* Style for doctor's name (h6) */
+.doctor-list h6 {
+    font-size: 1rem;          
+    font-weight: 700;        
+    color: #1e293b;
+    margin-bottom: 6px;
+}
+
+/* Highlight the specialty text */
+.doctor-list h6 span.specialty {
+    font-weight: 500;
+    color: #0ea5e9;
+}
+
+/* Style for doctor links (Facebook & phone) */
+.doctor-list a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+    transition: color 0.2s ease;
+}
+
+/* Specific styling */
+.doctor-list a.text-primary {
+    color: #0d6efd
+}
+

@@ -1,0 +1,62 @@
+/* Hamburger base */
+.hamburger {
+  display: none; /* hidden by default */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  z-index: 2000; /* above sidebar */
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover{
+  background: none;
+}
+
+/* Show on tablets & phones */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    left: 15px;
+  }
+}
+
+/* Extra small phones (≤ 480px) */
+@media (max-width: 480px) {
+  .hamburger {
+    width: 24px;   /* slightly smaller */
+    height: 18px;
+    top: 20px;
+    left: 12px;
+  }
+
+  .hamburger span {
+    height: 2.5px;
+    background: #222; /* darker for visibility */
+  }
+}
+
+/* Active (X animation) */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}

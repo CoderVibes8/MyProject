@@ -1,0 +1,263 @@
+2025-07-16 11:28:16 - Request: amount=500.00
+Response (HTTP 200): Array
+(
+    [data] => Array
+        (
+            [id] => cs_K3f4p95bvUhvJm1xPm8w4cox
+            [type] => checkout_session
+            [attributes] => Array
+                (
+                    [billing] => Array
+                        (
+                            [address] => Array
+                                (
+                                    [city] => 
+                                    [country] => 
+                                    [line1] => 
+                                    [line2] => 
+                                    [postal_code] => 
+                                    [state] => 
+                                )
+
+                            [email] => 
+                            [name] => 
+                            [phone] => 
+                        )
+
+                    [billing_information_fields_editable] => enabled
+                    [cancel_url] => http://localhost/Capstone2/patient/dashboard.patient.php
+                    [checkout_url] => https://checkout.paymongo.com/cs_K3f4p95bvUhvJm1xPm8w4cox_client_jmoNuh7f1A5HNxzdLiGdydAV#cGtfdGVzdF93ZEpYaVg1bjZVQ2NXVnZQbmZXcDJlWVk=
+                    [client_key] => cs_K3f4p95bvUhvJm1xPm8w4cox_client_jmoNuh7f1A5HNxzdLiGdydAV
+                    [customer_email] => 
+                    [description] => 
+                    [line_items] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [amount] => 50000
+                                    [currency] => PHP
+                                    [description] => 
+                                    [images] => Array
+                                        (
+                                        )
+
+                                    [name] => Consultation Fee
+                                    [quantity] => 1
+                                )
+
+                        )
+
+                    [livemode] => 
+                    [merchant] => HealthNET
+                    [payments] => Array
+                        (
+                        )
+
+                    [payment_intent] => Array
+                        (
+                            [id] => pi_55hv3zpn8gVBpbALJyA6axi5
+                            [type] => payment_intent
+                            [attributes] => Array
+                                (
+                                    [amount] => 50000
+                                    [capture_type] => automatic
+                                    [client_key] => pi_55hv3zpn8gVBpbALJyA6axi5_client_hoJ1iGywNtrVnEraKY23oz8f
+                                    [currency] => PHP
+                                    [description] => 
+                                    [livemode] => 
+                                    [original_amount] => 50000
+                                    [statement_descriptor] => HealthNET
+                                    [status] => awaiting_payment_method
+                                    [last_payment_error] => 
+                                    [payment_method_allowed] => Array
+                                        (
+                                            [0] => paymaya
+                                            [1] => grab_pay
+                                            [2] => gcash
+                                            [3] => card
+                                        )
+
+                                    [payments] => Array
+                                        (
+                                        )
+
+                                    [next_action] => 
+                                    [payment_method_options] => Array
+                                        (
+                                            [card] => Array
+                                                (
+                                                    [request_three_d_secure] => any
+                                                )
+
+                                        )
+
+                                    [metadata] => Array
+                                        (
+                                            [customer_reference] => 
+                                        )
+
+                                    [setup_future_usage] => 
+                                    [created_at] => 1752658746
+                                    [updated_at] => 1752658746
+                                )
+
+                        )
+
+                    [payment_method_types] => Array
+                        (
+                            [0] => grab_pay
+                            [1] => paymaya
+                            [2] => card
+                            [3] => gcash
+                        )
+
+                    [reference_number] => 
+                    [send_email_receipt] => 
+                    [show_description] => 
+                    [show_line_items] => 1
+                    [status] => active
+                    [success_url] => http://localhost/Capstone2/patient/success_payment.php?session_id={CHECKOUT_SESSION_ID}&success=true&amount=
+                    [created_at] => 1752658746
+                    [updated_at] => 1752658746
+                    [metadata] => Array
+                        (
+                            [customer_reference] => 
+                        )
+
+                )
+
+        )
+
+)
+
+Response (HTTP 200): Array
+(
+    [data] => Array
+        (
+            [id] => cs_QSEqUPubUi72BrW745haEBNr
+            [type] => checkout_session
+            [attributes] => Array
+                (
+                    [billing] => Array
+                        (
+                            [address] => Array
+                                (
+                                    [city] => 
+                                    [country] => 
+                                    [line1] => 
+                                    [line2] => 
+                                    [postal_code] => 
+                                    [state] => 
+                                )
+
+                            [email] => 
+                            [name] => 
+                            [phone] => 
+                        )
+
+                    [billing_information_fields_editable] => enabled
+                    [cancel_url] => http://localhost/Capstone2/patient/dashboard.patient.php
+                    [checkout_url] => https://checkout.paymongo.com/cs_QSEqUPubUi72BrW745haEBNr_client_g7HtKq2GCZF3LxxVgZSdrBsH#cGtfdGVzdF93ZEpYaVg1bjZVQ2NXVnZQbmZXcDJlWVk=
+                    [client_key] => cs_QSEqUPubUi72BrW745haEBNr_client_g7HtKq2GCZF3LxxVgZSdrBsH
+                    [customer_email] => 
+                    [description] => 
+                    [line_items] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [amount] => 50000
+                                    [currency] => PHP
+                                    [description] => 
+                                    [images] => Array
+                                        (
+                                        )
+
+                                    [name] => Consultation Fee
+                                    [quantity] => 1
+                                )
+
+                        )
+
+                    [livemode] => 
+                    [merchant] => HealthNET
+                    [payments] => Array
+                        (
+                        )
+
+                    [payment_intent] => Array
+                        (
+                            [id] => pi_wm7JfkVsE5RPuDTFMoCAkmae
+                            [type] => payment_intent
+                            [attributes] => Array
+                                (
+                                    [amount] => 50000
+                                    [capture_type] => automatic
+                                    [client_key] => pi_wm7JfkVsE5RPuDTFMoCAkmae_client_RgVx4DnxsufANedHt3efpkqx
+                                    [currency] => PHP
+                                    [description] => 
+                                    [livemode] => 
+                                    [original_amount] => 50000
+                                    [statement_descriptor] => HealthNET
+                                    [status] => awaiting_payment_method
+                                    [last_payment_error] => 
+                                    [payment_method_allowed] => Array
+                                        (
+                                            [0] => paymaya
+                                            [1] => card
+                                            [2] => gcash
+                                            [3] => grab_pay
+                                        )
+
+                                    [payments] => Array
+                                        (
+                                        )
+
+                                    [next_action] => 
+                                    [payment_method_options] => Array
+                                        (
+                                            [card] => Array
+                                                (
+                                                    [request_three_d_secure] => any
+                                                )
+
+                                        )
+
+                                    [metadata] => Array
+                                        (
+                                            [customer_reference] => 
+                                        )
+
+                                    [setup_future_usage] => 
+                                    [created_at] => 1752658774
+                                    [updated_at] => 1752658774
+                                )
+
+                        )
+
+                    [payment_method_types] => Array
+                        (
+                            [0] => grab_pay
+                            [1] => gcash
+                            [2] => paymaya
+                            [3] => card
+                        )
+
+                    [reference_number] => 
+                    [send_email_receipt] => 
+                    [show_description] => 
+                    [show_line_items] => 1
+                    [status] => active
+                    [success_url] => http://localhost/Capstone2/patient/success_payment.php?session_id={CHECKOUT_SESSION_ID}&success=true&amount=50000
+                    [created_at] => 1752658775
+                    [updated_at] => 1752658775
+                    [metadata] => Array
+                        (
+                            [customer_reference] => 
+                        )
+
+                )
+
+        )
+
+)
+

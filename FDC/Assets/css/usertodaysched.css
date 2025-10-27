@@ -1,0 +1,163 @@
+/* Modal Backdrop */
+.scheduleModal {
+  display: none;              /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1050;
+  display: flex;              
+  align-items: center;
+  justify-content: center;   
+
+  
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+/* Show state */
+.scheduleModal[aria-hidden="false"]{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Modal Box */
+.schedule-modal {
+  background: #fff;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  
+  animation: slideDown 0.3s ease;
+  
+}
+
+
+/* Header */
+.schedule-modal .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;           
+  padding: 16px 20px;
+  background: #0ea5e9;           
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  color: #fff;                   
+}
+.schedule-modal .modal-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+}
+.schedule-modal .modal-header .modal-subtitle {
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+/* Close button */
+.todaysched-close-btn {
+  border: none;
+  background: transparent;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.2s;
+}
+.todaysched-close-btn:hover {
+  background: transparent;
+}
+
+/* Content area */
+.schedule-content {
+  padding: 15px 20px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Time sections */
+.time-section {
+  margin-bottom: 20px;
+}
+.time-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #444;
+}
+.time-label {
+  font-size: 1rem;
+}
+.time-count {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Appointment items */
+.appointment-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  justify-content: space-between;
+}
+.appointment-item .time-slot {
+  font-weight: 600;
+  color: #2a7ade;
+  width: 90px;
+}
+.appointment-details {
+  flex: 1;
+  margin-left: 10px;
+}
+.patient-name {
+  font-weight: 600;
+  display: block;
+}
+.appointment-type {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-top: 4px;
+  color: #fff;
+}
+.appointment-type.online {
+  background: #2a7ade;
+}
+.appointment-type.clinic {
+  background: #28a745;
+}
+.appointment-meta {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Action buttons */
+.todaysched-action-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #2a7ade;
+  color: white;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.todaysched-action-btn:hover {
+  background: #1d5bbf;
+}
+.todaysched-action-btn.primary {
+  background: #28a745;
+}
+.todaysched-action-btn.primary:hover {
+  background: #1e7e34;
+}

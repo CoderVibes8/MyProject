@@ -1,0 +1,181 @@
+/* Header strip for the patient */
+.welcome {
+  background: rgba(255, 255, 255, .94);
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 4px 14px rgba(2, 6, 23, .06);
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+
+}
+
+.welcome h2 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: .2px;
+}
+
+.welcome p {
+  margin: 4px 0 0;
+  color: #475569;
+  font-size: 14px;
+}
+
+.welcome .grow {
+  flex: 1;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.welcome-btn {
+  position: relative;
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #0ea5e9;
+  color: #fff;
+  transition: transform .05s ease, background .2s ease;
+}
+
+.welcome-btn span {
+  font-size: 12px;
+  margin: 0;
+  color: gray;
+}
+
+.welcome-btn:hover {
+  background: #0369a1;
+}
+
+.welcome-btn:active {
+  transform: translateY(1px);
+}
+
+.welcome-btn.alt {
+  background: #f8fafc;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  font-weight: 600;
+}
+
+
+/* ================================== */
+/* Responsive Fix for Welcome Section */
+/* ================================== */
+
+/* Tablets and below (≤ 992px) */
+@media (max-width: 992px) {
+  .welcome {
+    margin-left: 300px !important;
+    margin-right: 30px !important;
+    width: 68%;
+    border-radius: 12px;
+    padding: 14px;
+    flex-direction: column;
+    /* stack title + actions */
+    align-items: flex-start;
+  }
+
+  .welcome h2 {
+    font-size: 18px;
+  }
+
+  .welcome p {
+    font-size: 13px;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .welcome-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+/* Phones (≤ 576px) */
+@media (max-width: 576px) {
+  .welcome {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .welcome h2 {
+    font-size: 16px;
+  }
+
+  .welcome p {
+    font-size: 12px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .welcome-btn {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .welcome-btn span {
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+  }
+}
+
+/* ================================== */
+/* Extra Small Phones (≤ 480px) */
+/* ================================== */
+@media (max-width: 480px) {
+  .welcome {
+    margin: 0 !important;   /* reduce side margins */
+    padding: 10px;
+    border-radius: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+  }
+
+  .welcome h2 {
+    font-size: 15px;
+  }
+
+  .welcome p {
+    font-size: 11px;
+  }
+
+  .actions {
+    flex-direction: column;      /* stack buttons */
+    gap: 6px;
+    width: 100%;
+  }
+
+  .welcome-btn {
+    width: 100%;
+    font-size: 12px;
+    padding: 8px 10px;
+    text-align: center;
+  }
+
+  .welcome-btn span {
+    display: block;
+    font-size: 10px;
+    margin-top: 2px;
+  }
+}

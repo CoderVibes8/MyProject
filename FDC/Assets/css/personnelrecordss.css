@@ -1,0 +1,382 @@
+/* Table container */
+.table-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 14px;
+   
+    width: 980px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Table header */
+.table-header h2 {
+    font-weight: 600;
+    color: #2d3e50;
+}
+
+.table-header p {
+    color: #6c757d;
+    font-size: 0.95rem;
+}
+
+/* Table styling */
+#patientTable {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#patientTable thead th {
+    background-color: #0D6EFD !important;
+    color: #fff !important;
+    font-size: 0.95rem;
+}
+
+
+
+#patientTable tbody tr {
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#patientTable tbody tr:hover {
+    background: #f1f5fb;
+}
+
+/* Table cells */
+#patientTable td,
+#patientTable th {
+    padding: 14px 18px;
+    vertical-align: middle;
+    font-size: 0.9rem;
+}
+
+/* Status badges override */
+.badge.bg-primary {
+    background: #5c99ee !important;
+}
+
+.badge.bg-success {
+    background: #28a745 !important;
+}
+
+.badge.bg-danger {
+    background: #dc3545 !important;
+}
+
+.badge.bg-warning {
+    background: #ffc107 !important;
+    color: #fff !important;
+}
+
+.badge.bg-secondary {
+    background: #6c757d !important;
+}
+
+
+
+
+
+/* Center the modal (Bootstrap already does vertical centering with modal-dialog-centered) */
+.history-records .modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+/* Modal header styling */
+.history-records .modal-header {
+    background: #f8f9fa;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 15px 20px;
+}
+
+.history-records .modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* List group styling */
+.history-records .modal-body .list-group {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.history-records .modal-body {
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
+}
+
+.history-records .modal-body .record-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Two columns */
+    gap: 15px 30px;
+}
+
+.history-records .modal-body .record-item {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 12px 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.history-records .modal-body .record-item strong {
+    color: #444;
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.history-records .modal-body .record-item span,
+.history-records .modal-body .record-item a {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    text-align: left;
+}
+
+.history-records .modal-body .record-item a.btn {
+    margin-top: 6px;
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.history-records .modal-body .pdf-status {
+    font-style: italic;
+    color: #777;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Ultra small for mobile ≤480px */
+@media (max-width: 480px) {
+    .table-container {
+        width: 100%;
+        min-width: 310px;
+        margin-left: 0 !important;
+        padding: 6px;
+        overflow-x: auto; /* allow scroll for wide tables */
+    }
+
+    /* Table font + padding shrink */
+    #patientTable {
+        font-size: 0.6rem; /* smaller text globally */
+    }
+
+    #patientTable thead th {
+        font-size: 0.65rem; 
+        padding: 5px 6px; /* less padding */
+    }
+
+    #patientTable tbody td {
+        font-size: 0.6rem;
+        padding: 5px 6px;
+    }
+
+    /* Status badge shrink */
+    #patientTable .badge {
+        font-size: 0.55rem;
+        padding: 3px 6px;
+    }
+
+    /* Pagination shrink */
+    #pagination button {
+        font-size: 0.65rem;
+        padding: 3px 6px;
+    }
+
+    #pagination span {
+        font-size: 0.65rem;
+    }
+
+    /* Modal adjustments */
+    .history-records .modal-title {
+        font-size: 13px;
+    }
+
+    .history-records .modal-body {
+        padding: 8px;
+    }
+
+    .history-records .record-item strong {
+        font-size: 11px;
+    }
+
+    .history-records .record-item span,
+    .history-records .record-item a {
+        font-size: 11px;
+    }
+
+    .history-records .record-item a.btn {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+}
+
+/* 📲 Small tablets / large phones (min 481px to max 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .table-container {
+        width: 98%;
+        min-width: 400px;
+        margin-left: 10px !important;
+        padding: 8px;
+        overflow-x: auto;
+    }
+
+    #patientTable {
+        font-size: 0.7rem;
+    }
+
+    #patientTable thead th {
+        font-size: 0.75rem;
+        padding: 6px 8px;
+    }
+
+    #patientTable tbody td {
+        font-size: 0.7rem;
+        padding: 6px 8px;
+    }
+
+    #patientTable .badge {
+        font-size: 0.65rem;
+        padding: 4px 7px;
+    }
+
+    #pagination button {
+        font-size: 0.7rem;
+        padding: 4px 7px;
+    }
+
+    #pagination span {
+        font-size: 0.7rem;
+    }
+
+    .history-records .modal-title {
+        font-size: 14px;
+    }
+
+    .history-records .modal-body {
+        padding: 10px;
+    }
+
+    .history-records .record-item strong {
+        font-size: 12px;
+    }
+
+    .history-records .record-item span,
+    .history-records .record-item a {
+        font-size: 12px;
+    }
+
+    .history-records .record-item a.btn {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+}
+
+
+/* 💻 Tablets / small laptops (min 769px to max 1020px) */
+@media (min-width: 769px) and (max-width: 1020px) {
+    .table-container {
+        width: 95%;
+        min-width: 600px;
+        margin-left: 30px !important;
+        padding: 10px;
+        overflow-x: auto;
+    }
+
+    #patientTable {
+        font-size: 0.85rem;
+    }
+
+    #patientTable thead th {
+        font-size: 0.9rem; 
+        padding: 8px 10px;
+    }
+
+    #patientTable tbody td {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+    }
+
+    #patientTable .badge {
+        font-size: 0.8rem;
+        padding: 5px 9px;
+    }
+
+    #pagination button {
+        font-size: 0.85rem;
+        padding: 5px 9px;
+    }
+
+    #pagination span {
+        font-size: 0.85rem;
+    }
+
+    .history-records .modal-title {
+        font-size: 15px;
+    }
+
+    .history-records .modal-body {
+        padding: 12px;
+    }
+
+    .history-records .record-item strong {
+        font-size: 13px;
+    }
+
+    .history-records .record-item span,
+    .history-records .record-item a {
+        font-size: 13px;
+    }
+
+    .history-records .record-item a.btn {
+        font-size: 12px;
+        padding: 5px 9px;
+    }
+}
+
+
+

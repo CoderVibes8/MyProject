@@ -1,0 +1,328 @@
+<?php
+session_name('patient_session');
+session_start();
+include_once "../Config/conn.config.php";
+
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../index.php");
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
+
+
+try {
+    $user = $conn->prepare("SELECT up.*, uc.profile_picture FROM user_patient up 
+                               LEFT JOIN user_credentials uc ON up.user_id = uc.user_id 
+                               WHERE up.user_id = ?");
+    $user->execute([$user_id]);
+    $userProfile = $user->fetch(PDO::FETCH_ASSOC);
+
+    $profile_picture = !empty($userProfile['profile_picture'])
+        ? "../uploads/" . htmlspecialchars($userProfile['profile_picture'])
+        : "../uploads/user.png";
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+
+$full_name = $userProfile['first_name'] . ' ' . $userProfile['last_name'];
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<?php include_once "../Includes/Head.php"; ?>
+
+<style>
+
+</style>
+
+
+
+<body>
+
+    <?php include_once "../Includes/Header.php"; ?>
+    <?php include_once "../Includes/Sidebar.php"; ?>
+
+    <main id="main" class="main">
+        <div class="chatbox-container">
+            <!-- Contacts / Chatheads -->
+            <div class="chatbox-sidebar">
+                <div class="chatbox-sidebar-header">
+                    <h2 class="chatbox-title">Recent Conversations</h2>
+                    <p class="chatbox-subtitle">Active patient communications</p>
+                    <div class="chatbox-stats">
+                        <div class="chatbox-stat">
+                            <div class="chatbox-dot online"></div>
+                            <span>4 Online</span>
+                        </div>
+                        <div class="chatbox-stat">
+                            <div class="chatbox-dot offline"></div>
+                            <span>2 Offline</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chatbox-search">
+                    <input type="text" class="chatbox-search-input" placeholder="Search conversations...">
+                </div>
+
+                <div class="chatbox-contacts">
+                    <!-- Contact Item -->
+                    <div class="chatbox-contact active">
+                        <div class="chatbox-avatar doctor">DS
+                            <div class="chatbox-status online"></div>
+                        </div>
+                        <div class="chatbox-contact-info">
+                            <div class="chatbox-name">Dr. Sarah Smith</div>
+                            <div class="chatbox-role">Cardiologist</div>
+                            <div class="chatbox-lastmsg">Your test results look good...</div>
+                        </div>
+                        <div class="chatbox-time">2m</div>
+                    </div>
+
+                    <div class="chatbox-contact">
+                        <div class="chatbox-avatar doctor">MJ
+                            <div class="chatbox-status online"></div>
+                        </div>
+                        <div class="chatbox-contact-info">
+                            <div class="chatbox-name">Dr. Michael Johnson</div>
+                            <div class="chatbox-role">General Practitioner</div>
+                            <div class="chatbox-lastmsg">Please take the medication as...</div>
+                        </div>
+                        <div class="chatbox-time">1h</div>
+                        <div class="chatbox-badge">2</div>
+                    </div>
+
+                    <div class="chatbox-contact">
+                        <div class="chatbox-avatar patient">AB
+                            <div class="chatbox-status offline"></div>
+                        </div>
+                        <div class="chatbox-contact-info">
+                            <div class="chatbox-name">Alice Brown</div>
+                            <div class="chatbox-role">Patient</div>
+                            <div class="chatbox-lastmsg">Thank you for the consultation</div>
+                        </div>
+                        <div class="chatbox-time">3h</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Area -->
+            <div class="chatbox-main">
+                <!-- Header -->
+                <div class="chatbox-header">
+                    <div class="chatbox-header-info">
+                        <div class="chatbox-breadcrumb">
+                            <span>Messages</span>
+                            <span class="chatbox-separator">›</span>
+                            <span>Dr. Sarah Smith</span>
+                        </div>
+                        <div class="chatbox-user">
+                            <div class="chatbox-user-avatar">DS</div>
+                            <div>
+                                <div class="chatbox-user-name">Dr. Sarah Smith</div>
+                                <div class="chatbox-user-status">
+                                    <div class="chatbox-dot online"></div>
+                                    Online • Cardiologist
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- Messages -->
+                <div class="chatbox-messages">
+                    <div class="chatbox-message">
+                        <div class="chatbox-msg-avatar">DS</div>
+                        <div class="chatbox-msg-content">
+                            <div class="chatbox-msg-text">Hello! I've reviewed your recent test results and everything looks good.</div>
+                            <div class="chatbox-msg-time">10:30 AM</div>
+                        </div>
+                    </div>
+
+                    <div class="chatbox-message sent">
+                        <div class="chatbox-msg-content">
+                            <div class="chatbox-msg-text">That's great news! Should I continue with the current medication?</div>
+                            <div class="chatbox-msg-time">10:32 AM</div>
+                        </div>
+                        <div class="chatbox-msg-avatar">YU</div>
+                    </div>
+                </div>
+
+                <!-- Input -->
+                <div class="chatbox-input-area">
+                    <textarea class="chatbox-input" placeholder="Type your message..."></textarea>
+                    <button class="chatbox-send mt-2">➤</button>
+                </div>
+            </div>
+        </div>
+
+    </main><!-- End #main -->
+
+
+
+    <script>
+        const patientId = <?php echo json_encode($_SESSION['user_id'] ?? null); ?>;
+        let currentDoctorId = null;
+        let messagePollingInterval = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const doctorList = document.getElementById('doctorList');
+            const messageInput = document.getElementById('messageInput');
+            const sendButton = document.getElementById('sendButton');
+            const doctorNameElem = document.getElementById('currentDoctorName');
+            const doctorImgElem = document.getElementById('currentDoctorImg');
+            const messagesContainer = document.getElementById('messagesContainer');
+
+            function fetchDoctorList() {
+                const previouslyActiveDoctorId = currentDoctorId;
+
+                fetch('../Auth/User/get_doctors_all.php')
+                    .then(response => response.json())
+                    .then(doctors => {
+                        doctorList.innerHTML = '';
+                        doctors.forEach(doctor => {
+                            const doctorItem = document.createElement('div');
+                            doctorItem.className = 'doctor-item';
+                            doctorItem.dataset.doctorId = doctor.doctor_id;
+
+                            doctorItem.innerHTML = `
+                    <img src="../uploads/${doctor.img || 'user.png'}" alt="${doctor.name}" class="doctor-avatar">
+                    <div class="doctor-info">
+                        <div class="doctor-name">Dr. ${doctor.name}</div>
+                        <div class="doctor-last-message">${doctor.lastMessage || ''}</div>
+                        <div class="message-time">${doctor.lastMessageTime || ''}</div>
+                    </div>
+                `;
+
+                            // Set up click handler
+                            doctorItem.addEventListener('click', () => {
+                                loadDoctorChat(doctor.doctor_id, doctor.name, doctor.img);
+                                document.querySelectorAll('.doctor-item').forEach(item => item.classList.remove('active'));
+                                doctorItem.classList.add('active');
+                            });
+
+                            // Restore active styling
+                            if (doctor.doctor_id === previouslyActiveDoctorId) {
+                                doctorItem.classList.add('active');
+                            }
+
+                            doctorList.appendChild(doctorItem);
+                        });
+
+                        // If no doctor is selected, select the first one
+                        if (!previouslyActiveDoctorId && doctors.length > 0) {
+                            const firstDoctor = doctors[0];
+                            doctorList.firstChild.classList.add('active');
+                            loadDoctorChat(firstDoctor.doctor_id, firstDoctor.name, firstDoctor.img);
+                        }
+                    });
+            }
+            fetchDoctorList();
+            setInterval(fetchDoctorList, 1000);
+
+            function fetchMessages() {
+                if (!currentDoctorId || !patientId) return;
+
+                fetch(`../Auth/User/get_messages_all.php?doctor_id=${currentDoctorId}&user_id=${patientId}`)
+                    .then(response => response.json())
+                    .then(messages => {
+                        messagesContainer.innerHTML = '';
+                        messages.forEach(msg => {
+                            const msgDiv = document.createElement('div');
+                            msgDiv.className = `message ${msg.sender === 'user' ? 'sent' : 'received'}`;
+
+
+                            msgDiv.innerHTML = `
+                            <div class="message-content">${msg.content}</div>
+                            <span class="message-time">${msg.time}</span>
+                        `;
+                            messagesContainer.appendChild(msgDiv);
+                        });
+                        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                    });
+            }
+
+            function loadDoctorChat(doctorId, doctorName, doctorImg) {
+                currentDoctorId = doctorId;
+                console.log('Fetching messages for doctor:', currentDoctorId);
+                doctorNameElem.textContent = "Dr. " + doctorName;
+                doctorImgElem.src = doctorImg ? "../uploads/" + doctorImg : "../uploads/user.png";
+
+                if (messagePollingInterval) clearInterval(messagePollingInterval);
+
+                fetchMessages();
+                messagePollingInterval = setInterval(fetchMessages, 2000);
+            }
+
+            function sendMessage() {
+                const message = messageInput.value.trim();
+                if (!message || !currentDoctorId || !patientId) return;
+
+
+
+                const formData = new FormData();
+                formData.append('doctor_id', currentDoctorId);
+                formData.append('patient_id', patientId);
+                formData.append('sender', 'user');
+                formData.append('message', message);
+
+                fetch('../Auth/User/send_message_all.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (Array.isArray(data)) {
+                            messageInput.value = '';
+                            fetchMessages();
+                        } else if (data.success === false) {
+                            alert('Failed to send: ' + data.error);
+                        }
+                    })
+                    .catch(err => console.error('Send error:', err));
+            }
+
+            sendButton.addEventListener('click', sendMessage);
+            messageInput.addEventListener('keypress', e => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+
+
+    <?php include_once "../Includes/Footer.php"; ?>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="../assets/vendor/echarts/echarts.min.js"></script>
+    <script src="../assets/vendor/quill/quill.js"></script>
+    <script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="../assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <?php include_once "../Includes/SweetAlert.php"; ?>
+
+</body>
+
+</html>

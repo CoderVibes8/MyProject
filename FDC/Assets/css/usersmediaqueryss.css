@@ -1,0 +1,461 @@
+/* ========================== */
+/* Responsive Chat + About FDC */
+/* ========================== */
+
+
+/* Desktop (keep as is) */
+.section.dashboard {
+    margin-left: 130px;
+    /* desktop offset */
+}
+
+.about-content {
+    margin-left: 830px;
+    /* desktop alignment */
+
+}
+
+/* Tablets and below */
+@media (max-width: 992px) {
+    .section.dashboard {
+        margin-left: 0 !important;
+        /* reset desktop offset */
+        padding: 0 1rem;
+    }
+
+    .row.g-3 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-left: 100px;
+        gap: 1rem;
+    }
+
+    .col-md-3 {
+        flex: 1 1 45%;
+        /* two cards side by side on tablet */
+        max-width: 35%;
+    }
+
+    .appointment-card {
+        width: 100%;
+    }
+
+    .about-content {
+        margin-left: 300px !important;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        width: auto;
+    }
+
+    .card-about {
+        width: 100%;
+        max-width: 600px;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .card-about svg {
+        width: 160px;
+        height: auto;
+    }
+}
+
+/* Small phones (≤ 576px) */
+@media (max-width: 576px) {
+
+
+    .col-md-3 {
+        flex: 1 1 100%;
+        /* stack cards full width */
+        max-width: 100%;
+    }
+
+    .card-about svg {
+        width: 120px;
+    }
+
+    .title-about {
+        font-size: 1.2rem;
+    }
+
+    .text-about {
+        font-size: 0.9rem;
+    }
+
+    .actions-about {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-about {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Mobile View - Book Appointment Modal */
+/* Tablet & Desktop screens (≥ 768px) */
+@media (min-width: 768px) {
+    .bookappointmentmodal .modal-dialog {
+        max-width: 800px !important;
+        /* make modal wider */
+        width: 800px;
+        margin-top: auto;
+    }
+
+    .bookappointmentmodal .modal-content {
+        min-height: 40vh;
+        /* taller modal */
+    }
+}
+
+/* Extra large screens (≥ 1400px) */
+@media (min-width: 1400px) {
+    .bookappointmentmodal .modal-dialog {
+        max-width: 1000px !important;
+        /* even wider on big desktops */
+    }
+}
+
+/* Mobile (≤ 767px) */
+@media (max-width: 767px) {
+    .bookappointmentmodal .modal-dialog {
+        max-width: 100%;
+        /* almost full width */
+        margin: 10px auto;
+    }
+
+    .bookappointmentmodal .modal-content {
+        min-height: auto;
+    }
+}
+
+
+/* Extra Small Phones (≤480px) */
+@media (max-width: 480px) {
+    .bookappointmentmodal .modal-dialog {
+        max-width: 95% !important;     /* a bit narrower */
+        width: 95% !important;
+        margin: 10px auto;
+        padding-left: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .bookappointmentmodal .modal-content {
+        max-height: 80vh !important;              
+        overflow-y: auto;              /* allow scroll if content too tall */
+        padding: 8px;                  /* tighter padding */
+        border-radius: 8px;
+    }
+
+    .bookappointmentmodal .modal-header {
+        padding: 6px 8px;
+        text-align: center;
+    }
+
+    .bookappointmentmodal .modal-title {
+        font-size: 1.1rem;
+        line-height: 1.2;              /* tighter line spacing */
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .bookappointmentmodal .modal-header .custom-close {
+        position: absolute !important;
+        top: 12px !important;
+        right: 6px !important;
+        background: transparent !important;
+        border: none !important;
+        font-size: 16px !important;
+        line-height: 1 !important;
+        padding: 4px !important;
+        color: #333 !important;
+        cursor: pointer !important;
+        transition: color 0.2s ease-in-out !important;
+    }
+
+    /* Center logo */
+    .bookappointmentmodal .modal-body img {
+        display: block;
+        margin: 6px auto 12px auto;
+        max-width: 50px;               /* even smaller logo */
+        height: auto;
+    }
+
+    /* Form fields */
+    .bookappointmentmodal .modal-body .form-control,
+    .bookappointmentmodal .modal-body select {
+        width: 100%;
+        font-size: 0.75rem;            /* slightly smaller text */
+        line-height: 1.2;              /* tighter spacing */
+        padding: 6px 8px;              /* reduce box size */
+        margin-bottom: 6px;
+    }
+
+    /* Action buttons */
+    .bookappointmentmodal .modal-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 6px;
+    }
+
+    .bookappointmentmodal .modal-footer .btn {
+        width: 100%;
+        font-size: 0.8rem;
+        padding: 6px 8px;              /* smaller button height */
+        border-radius: 4px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================
+   📱 Mobile View - Notification Modal
+   ============================ */
+@media (max-width: 767px) {
+    .notification-modal .modal {
+        width: 95%;
+        /* take almost full width */
+        max-width: 400px;
+        /* don’t stretch too wide */
+        margin: 20px auto;
+        /* center horizontally, near top */
+        border-radius: 10px;
+        padding: 12px;
+    }
+
+    .notification-modal .notif-head {
+        flex-direction: column;
+        /* stack title + close button */
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .notification-modal .title {
+        font-size: 1rem;
+    }
+
+    .notification-modal .close {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+
+    .notification-modal .notif-content {
+        max-height: auto;
+        /* fixed max height */
+        overflow-y: auto;
+        /* scrollable if content exceeds 200px */
+        font-size: 0.9rem;
+    }
+
+    .notification-modal .notif-actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .notification-modal .notif-actions .primary {
+        width: 100%;
+        /* full width button */
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+/* ============================
+   📱 Mobile View Fix
+   ============================ */
+@media (max-width: 767px) {
+
+    /* Dashboard Section */
+    .section.dashboard {
+        margin-left: 0 !important;
+        /* remove fixed margin */
+        padding: 10px;
+    }
+
+    /* Appointment cards: full width in a grid */
+    .section.dashboard .row {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* one per row */
+        gap: 12px;
+    }
+
+    .appointment-card {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    /* About/Contact card - stack and center */
+    .about-content {
+        margin-left: 0 !important;
+        margin-top: 20px;
+        padding: 0 10px;
+        width: auto;
+    }
+
+    .card-about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .card-about .art {
+        margin-bottom: 12px;
+    }
+
+    .rows-about .row-about {
+        margin-bottom: 8px;
+    }
+
+    .actions-about {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .actions-about .btn-about {
+        width: 100%;
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+}
+
+
+
+
+/* ============================
+   📱 Extra Small Phones (≤ 480px)
+   ============================ */
+@media (max-width: 480px) {
+
+    /* Dashboard Section */
+    .section.dashboard {
+        padding: 8px;
+    }
+
+    /* Appointment cards stack full width */
+    .appointment-card {
+        width: 320px;
+        padding: 12px;
+        font-size: 0.9rem;
+        margin: 0 -95px !important;
+    }
+
+    /* About section adjustments */
+    .about-content {
+        margin: 0 auto !important;
+        padding: 0 8px;
+        width: auto;
+    }
+
+    .card-about {
+        max-width: 100%;
+        padding: 12px;
+    }
+
+    .card-about svg {
+        width: 100px;
+        height: auto;
+    }
+
+    .title-about {
+        font-size: 1rem;
+    }
+
+    .text-about {
+        font-size: 0.85rem;
+    }
+
+    .actions-about {
+        gap: 6px;
+    }
+
+    .btn-about {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+
+    /* Book Appointment modal - full screen on tiny phones */
+    .bookappointmentmodal .modal-dialog {
+        width: 100% !important;
+        margin: 0;
+    }
+
+    .bookappointmentmodal .modal-content {
+        border-radius: 0;
+        min-height: 100vh;
+    }
+
+    /* Notification modal tweaks */
+    .notification-modal .modal {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .notification-modal .notif-head {
+        align-items: center;
+        text-align: center;
+    }
+
+    .notification-modal .notif-actions .primary {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+}

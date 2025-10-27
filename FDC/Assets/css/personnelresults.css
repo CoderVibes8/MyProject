@@ -1,0 +1,97 @@
+/* Result */
+#personnel_resultsModal .modal-content {
+    border-radius: 12px;
+    padding: 20px;
+    border: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    background: none !important; /* removes white background */
+}
+
+
+#personnel_resultsModal .modal-header {
+    justify-content: center;
+    text-align: center;
+}
+
+#personnel_resultsModal .modal-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#personnel_resultsModal .pdf-icon {
+    margin: 15px auto;
+    width: 80px;
+    height: 80px;
+    background: #007bff15;
+    /* subtle blue tint */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#personnel_resultsModal .pdf-icon svg {
+    width: 40px;
+    height: 40px;
+    fill: #007bff;
+}
+
+#personnel_resultsModal .modal-body h5 {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+#personnel_resultsModal .modal-body p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Full-width Blue Button */
+#personnel_resultsModal #downloadPdf {
+    display: block;
+    width: 100%;
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: 500;
+    padding: 12px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+#personnel_resultsModal #downloadPdf:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+#personnel_resultsModal .custom-close {
+    position: absolute;
+    top: 50%;
+    right: 15px;          
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin: 0;           
+}
+
+#personnel_resultsModal .custom-close i {
+    color: #333;
+    font-size: 16px; 
+}
+
+#personnel_resultsModal .custom-close:hover {
+    color: black;
+    background: none;
+}
+#personnel_resultsModal .modal-header {
+    position: relative; 
+    justify-content: center; 
+}
+

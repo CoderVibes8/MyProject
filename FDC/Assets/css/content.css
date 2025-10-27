@@ -1,0 +1,224 @@
+:root {
+    --health-primary: #0078d7;
+    --health-secondary: #005ea2;
+    --health-accent: #00b4d8;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.appointment-card {
+    width: 280px;
+    height: 150px;
+    background: linear-gradient(135deg, var(--health-primary), var(--health-secondary));
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 120, 215, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin-left: 200px;
+    margin-right: 30px;
+}
+
+.green-card {
+    background: linear-gradient(135deg, #28a745, #218838);
+    /* Green shades */
+}
+
+.blue-card {
+    background: linear-gradient(135deg, #0078d7, #005ea2);
+    /* Existing blue shades */
+}
+
+.gray-card {
+    background: linear-gradient(135deg, #7e7c78, #7e7c78);
+    /* Yellow shades */
+}
+
+.appointment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 120, 215, 0.3);
+}
+
+.appointment-card:active {
+    transform: translateY(0);
+}
+
+.card-content {
+    padding-left: 15px;
+    color: white;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.card-icon {
+    position: absolute;
+    bottom: -35px;
+    right: -30px;
+    width: 30px;
+    height: 30px;
+}
+
+
+.card-icon i {
+    font-size: 18px;
+}
+
+.card-title {
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0;
+}
+
+.card-subtitle {
+    font-size: 14px;
+    opacity: 0.8;
+    margin: 0;
+}
+
+.card-decoration {
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+.card-decoration:before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Modal styles */
+.modal-content {
+    border-radius: 0;
+    border: none;
+}
+
+.modal-header {
+    color: black;
+    border-radius: 12px 12px 0 0;
+}
+
+.modal-header .modal-title {
+    font-weight: 700;
+}
+
+
+.modal-header .btn-close:hover {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+
+
+
+
+.modal-footer .btn-primary {
+    background-color: var(--health-primary);
+    border-color: var(--health-primary);
+}
+
+.modal-footer .btn-primary:hover {
+    background-color: var(--health-secondary);
+    border-color: var(--health-secondary);
+}
+
+@media (max-width: 768px) {
+    .appointment-card {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Form */
+.form-contact label {
+    color: #999999;
+    font-size: 14px;
+}
+
+.form-contact input {
+    max-width: 450px;
+    width: 340px;
+}
+
+.form-contact .form-group {
+    margin-bottom: 30px;
+    color: #999999;
+}
+
+.form-contact .form-control {
+    border: 1px solid #e5e6e9;
+    border-radius: 5px;
+    height: 38px;
+    padding-left: 18px;
+    font-size: 13px;
+    background: transparent;
+    color: #999999 !important;
+    font-family: 'Work Sans', sans-serif;
+}
+
+
+.form-contact input::placeholder,
+.form-contact textarea::placeholder {
+    color: #999999 !important;
+    opacity: 1;
+}
+
+.form-contact select {
+    color: #999999 !important;
+}
+
+.form-contact select option {
+    color: black !important;
+}
+
+.form-contact textarea {
+    border-radius: 5px;
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    font-size: 13px;
+    background: transparent;
+    color: #999999 !important;
+}
+
+.otp-input {
+    width: 40px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid #999999;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.otp-input:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+

@@ -1,0 +1,59 @@
+#resultModal .modal-header {
+    position: relative; 
+    justify-content: center; 
+}
+
+#resultModal .custom-close {
+    position: absolute;
+    top: 50%;
+    right: 15px;          
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin: 0;           
+}
+
+#resultModal .custom-close i {
+    color: #333;
+    font-size: 16px; 
+}
+
+#resultModal .custom-close:hover {
+    color: black;
+    background: none;
+}
+
+
+/* Appointment details */
+#appointmentModal .modal-header {
+    position: relative; 
+    justify-content: center; 
+}
+
+#appointmentModal .custom-close {
+    position: absolute;
+    top: 50%;
+    right: 15px;          
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-top: 3px;
+}
+
+#appointmentModal .custom-close i {
+    color: #333;
+    font-size: 16px; 
+}
+
+#appointmentModal .custom-close:hover {
+    color: black;
+    background: none;
+}
+
+

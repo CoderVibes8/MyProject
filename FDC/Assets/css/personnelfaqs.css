@@ -1,0 +1,331 @@
+/* === FAQ Modal Custom Styles === */
+
+/* Modal Container */
+#faq .modal-content {
+    border-radius: 14px;
+    border: none;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: fadeInScale 0.3s ease;
+}
+
+/* Modal Header */
+#faq .modal-header {
+    display: flex;
+    background: #0ea5e9;
+    color: #fff;
+    border-bottom: none;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#faq .modal-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+#faq .custom-close {
+    border: none;
+    background: transparent;
+    font-size: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+#faq .custom-close:hover {
+    color: #f8f9fa;
+}
+
+/* Modal Body */
+#faq .modal-body {
+    background: #f9fafb;
+    padding: 20px;
+}
+
+#faq .FAQ-body .list-group {
+    border: none;
+}
+
+#faq .FAQ-body .list-group-item {
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    background: #fff;
+    padding: 16px 18px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+#faq .FAQ-body .list-group-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Badge */
+#faq .badge {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+    border-radius: 12px;
+}
+
+/* Modal Footer */
+#faq .modal-footer {
+    border-top: 1px solid #e9ecef;
+    background: #fdfdfd;
+    padding: 14px 20px;
+}
+
+#faq .modal-footer .btn {
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+
+
+
+
+/* === FAQ Answered Modal Styles === */
+#faqansweredModal .modal-dialog {
+  display: flex;
+  align-items: center;   
+  justify-content: center; 
+  min-height: 100vh;
+  margin: 0 auto;        
+}
+
+
+#faqansweredModal .modal-content {
+  border-radius: 14px;
+  border: none;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  animation: fadeInScale 0.3s ease;
+  width: 500px;
+}
+
+/* Header */
+#faqansweredModal .modal-header {
+  background: #0ea5e9;
+  color: #fff;
+  border-bottom: none;
+  padding: 16px 20px;
+}
+#faqansweredModal .modal-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+#faqansweredModal .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+#faqansweredModal .btn-close:hover {
+  opacity: 1;
+}
+
+/* Body */
+#faqansweredModal .modal-body {
+  background: #f9fafb;
+  padding: 22px 24px;
+  font-size: 0.95rem;
+}
+#faqansweredModal p strong {
+  color: #0d6efd;
+  font-weight: 600;
+}
+#faqansweredModal #fullQuestion {
+  background: #fff;
+  border-left: 4px solid #0ea5e9;
+  padding: 12px 14px;
+  margin-top: 6px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Form controls */
+#faqansweredModal .form-label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+}
+#faqansweredModal .form-control {
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  padding: 10px 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+#faqansweredModal .form-control:focus {
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14,165,233,0.2);
+  outline: none;
+}
+
+/* Footer */
+#faqansweredModal .modal-footer {
+  background: #fdfdfd;
+  border-top: 1px solid #e5e7eb;
+  padding: 14px 20px;
+}
+#faqansweredModal .modal-footer .btn {
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+#faqansweredModal .modal-footer .btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#faqansweredModal .custom-close {
+    border: none;
+    background: transparent;
+    font-size: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+#faqansweredModal .custom-close:hover {
+    color: #f8f9fa;
+}
+
+/* Animation */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================================
+   📱 Responsive Styles
+   ================================ */
+
+/* === 1. Mobile (≤480px) === */
+@media (max-width: 480px) {
+
+  /* FAQ Modal */
+  #faq .modal-content,
+  #faqansweredModal .modal-content {
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+
+  #faq .modal-header,
+  #faqansweredModal .modal-header {
+    padding: 12px 16px;
+  }
+
+  #faq .modal-title,
+  #faqansweredModal .modal-title {
+    font-size: 1rem;
+  }
+
+  #faq .modal-body,
+  #faqansweredModal .modal-body {
+    padding: 16px;
+    font-size: 0.9rem;
+  }
+
+  #faq .form-control,
+  #faqansweredModal .form-control {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  #faq .modal-footer,
+  #faqansweredModal .modal-footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #faq .modal-footer .btn,
+  #faqansweredModal .modal-footer .btn {
+    width: 100%;
+  }
+}
+
+/* === 2. Tablet (481px–768px) === */
+@media (min-width: 481px) and (max-width: 768px) {
+
+  #faq .modal-content,
+  #faqansweredModal .modal-content {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #faq .modal-title,
+  #faqansweredModal .modal-title {
+    font-size: 1.1rem;
+  }
+
+  #faq .modal-body,
+  #faqansweredModal .modal-body {
+    padding: 18px 20px;
+  }
+
+  #faq .form-control,
+  #faqansweredModal .form-control {
+    font-size: 0.95rem;
+  }
+}
+
+/* === 3. Small Desktop (769px–1020px) === */
+@media (min-width: 769px) and (max-width: 1020px) {
+
+  #faq .modal-content,
+  #faqansweredModal .modal-content {
+    width: 600px; /* slightly larger than default 500px */
+  }
+
+  #faq .modal-title,
+  #faqansweredModal .modal-title {
+    font-size: 1.25rem;
+  }
+
+  #faq .modal-body,
+  #faqansweredModal .modal-body {
+    padding: 24px;
+  }
+
+  #faq .form-control,
+  #faqansweredModal .form-control {
+    font-size: 1rem;
+  }
+}

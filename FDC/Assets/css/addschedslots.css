@@ -1,0 +1,358 @@
+/* === Add Schedule Slot Scoped Styles === */
+.add-sched-slot .calendar-container {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    /* wide but capped */
+    margin: 0 auto;
+    width: 100%;
+    /* ✅ fix overflow issue */
+    
+}
+
+
+
+.add-sched-slot .card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: none;
+}
+
+.add-sched-slot .card-body {
+    padding: 20px;
+}
+
+.add-sched-slot h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f2937;
+    /* gray-800 */
+    margin-bottom: 20px;
+}
+
+/* Form Labels */
+.add-sched-slot label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #374151;
+    /* gray-700 */
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* Form Selects */
+.add-sched-slot .form-select {
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: #111827;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-sched-slot .form-select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    outline: none;
+}
+
+/* Add Slot Button */
+.add-sched-slot #addSlotBtn {
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 8px;
+    padding: 10px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.add-sched-slot #addSlotBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+}
+
+/* Save Button */
+.add-sched-slot #saveBtn {
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 8px;
+    padding: 12px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.add-sched-slot #saveBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Table Styles */
+.add-sched-slot table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.add-sched-slot thead {
+    background: #f9fafb;
+}
+
+.add-sched-slot th,
+.add-sched-slot td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.add-sched-slot th {
+    font-weight: 600;
+    color: #374151;
+    font-size: 14px;
+}
+
+.add-sched-slot td {
+    color: #4b5563;
+}
+
+/* Action Buttons inside table */
+.add-sched-slot td button {
+    font-size: 13px;
+    border-radius: 6px;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.add-sched-slot td .btn-danger {
+    background: #ef4444;
+    color: white;
+}
+
+.add-sched-slot td .btn-danger:hover {
+    background: #dc2626;
+    transform: scale(1.05);
+}
+
+.add-sched-slot td .btn-warning {
+    background: #f59e0b;
+    color: white;
+}
+
+.add-sched-slot td .btn-warning:hover {
+    background: #d97706;
+    transform: scale(1.05);
+}
+
+/* Center align Delete button inside table cell */
+.add-sched-slot td {
+    text-align: center;
+    /* ✅ centers button horizontally */
+    vertical-align: middle;
+    /* ✅ centers vertically */
+}
+
+/* Delete Schedule Button (inside table) */
+.add-sched-slot td .delete-sched-btn {
+    background: #ef4444;
+    /* Tailwind red-500 */
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.add-sched-slot td .delete-sched-btn:hover {
+    background: #dc2626;
+    /* Tailwind red-600 */
+    transform: translateY(-2px);
+    /* slight lift */
+    box-shadow: 0 3px 6px rgba(220, 38, 38, 0.35);
+}
+
+
+/* === Responsive Styles (Mobile) === */
+@media (max-width: 480px) {
+
+    .add-sched-slot .calendar-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 16px;
+        /* small spacing between form and table */
+    }
+
+    /* Ensure form section (if wrapped in a div before the table) stays on top */
+    .add-sched-slot .form-section {
+        order: 1;
+    }
+
+    /* Headings */
+    .add-sched-slot h2 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    /* Form elements */
+    .add-sched-slot label {
+        font-size: 13px;
+    }
+
+    .add-sched-slot .form-select {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+    /* Buttons stacked full width */
+    .add-sched-slot .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* ==========================================
+     Tables responsive (EXCEPT #slotsTable)
+     ========================================== */
+    .add-sched-slot table:not(#slotsTable),
+    .add-sched-slot thead:not(#slotsTable thead),
+    .add-sched-slot tbody:not(#slotsTable tbody),
+    .add-sched-slot th:not(#slotsTable th),
+    .add-sched-slot td:not(#slotsTable td),
+    .add-sched-slot tr:not(#slotsTable tr) {
+        display: block;
+        width: 100%;
+    }
+
+    /* Hide table head in card mode */
+    .add-sched-slot table:not(#slotsTable) thead {
+        display: none;
+    }
+
+    /* Card-style rows */
+    .add-sched-slot table:not(#slotsTable) tr {
+        margin-bottom: 12px;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 8px;
+        background: #fff;
+    }
+
+    /* Flexed cells with labels */
+    .add-sched-slot table:not(#slotsTable) td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+        font-size: 13px;
+        border-bottom: none;
+    }
+
+    /* Show column label in card mode */
+    .add-sched-slot table:not(#slotsTable) td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #374151;
+        margin-right: 10px;
+    }
+
+    /* Two cards per row */
+    .add-sched-slot .calendar-container .card:nth-of-type(2),
+    .add-sched-slot .calendar-container .card:nth-of-type(3) {
+        flex: 1 1 calc(50% - 10px);
+        /* two per row with gap */
+        box-sizing: border-box;
+    }
+
+    /* Make table card full width */
+    .add-sched-slot .calendar-container .card:nth-of-type(4) {
+        flex: 1 1 100%;
+    }
+
+    /* Ensure all cards same height per row */
+    .add-sched-slot .calendar-container .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* ==========================================
+     Special rule for #slotsTable
+     (keep normal table but allow scroll)
+     ========================================== */
+    #slotsTable {
+        display: table;
+        width: 100%;
+        border-collapse: collapse;
+        overflow-x: auto;
+        /* horizontal scroll */
+        display: block;
+        /* wrapper scroll effect */
+        order: 2;
+        margin-top: 15px;
+    }
+
+    #slotsTable thead,
+    #slotsTable tbody,
+    #slotsTable tr,
+    #slotsTable td,
+    #slotsTable th {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+
+/* === Tablet Small (481px–768px) === */
+@media (min-width: 481px) and (max-width: 768px) {
+    .add-sched-slot .calendar-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        width: 90%;
+    }
+
+    .add-sched-slot .card {
+        width: 600px;
+    }
+
+    .add-sched-slot .calendar-container .card:last-of-type {
+        flex: 1 1 100%;
+    }
+
+    .add-sched-slot h2 {
+        font-size: 20px;
+    }
+}
+
+
+
+/* === Tablet Large (769px–1020px) === */
+@media (min-width: 769px) and (max-width: 1020px) {
+    .add-sched-slot .calendar-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        width: 90%;
+    }
+    .add-sched-slot .card{
+        width: 600px;
+    }
+
+    
+
+    .add-sched-slot .calendar-container .card:last-of-type {
+        flex: 1 1 100%;
+    }
+
+    .add-sched-slot h2 {
+        font-size: 21px;
+    }
+}

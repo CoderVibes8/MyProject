@@ -1,0 +1,479 @@
+/* === Notification Modal === */
+
+.notification-modal {
+    position: fixed;
+    inset: 0;
+    /* top:0; right:0; bottom:0; left:0 */
+    display: flex;
+    align-items: center;
+    /* vertical center */
+    justify-content: center;
+    /* horizontal center */
+    background: rgba(0, 0, 0, 0.5);
+    /* overlay */
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.notification-modal[aria-hidden="false"] {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Modal Box */
+.notification-modal .modal {
+    position: relative;
+    background: #fff;
+    width: 500px;
+    max-width: 60%;
+    max-height: 60vh;
+    /* keep modal in viewport */
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    animation: slideDown 0.3s ease;
+    overflow: hidden;
+}
+
+/* Header */
+.notif-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    background: #0ea5e9;
+    color: #fff;
+    font-weight: 600;
+}
+
+.notif-head .close {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* Content */
+.notif-content {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* Notification Item */
+.notif-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    position: relative;
+}
+
+.notif-note .icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #0ea5e9;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.notif-note .msg {
+    flex: 1;
+    font-size: 0.9rem;
+    color: #374151;
+    line-height: 1.4;
+}
+
+.notif-note .msg .time {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-top: 3px;
+}
+
+/* Status label inside notification */
+.notif-note .status {
+    color: #0ea5e9;
+    /* blue text */
+    background: rgba(14, 165, 233, 0.15);
+    /* light blue background */
+    font-size: 0.75rem;
+    /* small text */
+    font-weight: 600;
+    padding: 2px 6px;
+    /* small padding */
+    border-radius: 8px;
+    /* rounded pill style */
+    display: inline-block;
+    /* keeps it compact */
+}
+
+
+/* Label (New / Info / Result) */
+.notif-note>.time {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 9999px;
+    background: #e0f2fe;
+    color: #0369a1;
+    font-weight: 500;
+}
+
+/* Specific label colors */
+.notif-note span.time:contains("New") {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.notif-note span.time:contains("Info") {
+    background: #fef9c3;
+    color: #854d0e;
+}
+
+.notif-note span.time:contains("Result") {
+    background: #f3e8ff;
+    color: #6d28d9;
+}
+
+/* Actions */
+.notif-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 12px 18px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.notif-actions .primary,
+.notif-actions .secondary {
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.notif-actions .primary {
+    background: #0ea5e9;
+    border: none;
+    color: #fff;
+}
+
+.notif-actions .secondary {
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    color: #374151;
+}
+
+
+/* ============================
+   📱 Mobile View - Notification Modal
+   ============================ */
+@media (max-width: 720px) {
+    .notification-modal .modal {
+        width: 95%;
+        /* almost full width */
+        max-width: 380px;
+        /* cap width on larger phones */
+        max-height: 60vh !important;
+        /* taller on mobile */
+        margin: 20px auto;
+        /* space from top */
+        border-radius: 10px;
+    }
+
+    .notification-modal .notif-head {
+        flex-direction: column;
+        /* stack title + close */
+        align-items: flex-start;
+        gap: 6px;
+        padding: 12px 14px;
+    }
+
+    .notification-modal .title {
+        font-size: 1rem;
+    }
+
+    .notification-modal .close {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+
+    .notification-modal .notif-content {
+        max-height: 500px !important;
+        height: 500px !important;
+        /* controlled scroll area */
+        overflow-y: auto;
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+
+    .notification-modal .notif-note {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+
+    .notification-modal .notif-actions {
+        justify-content: center;
+        /* center button */
+        padding: 10px;
+    }
+
+    .notification-modal .notif-actions .primary,
+    .notification-modal .notif-actions .secondary {
+        width: 100%;
+        /* full width buttons for easier tap */
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
+
+
+/* ============================
+   📱 Extra Small Phones (≤480px)
+   ============================ */
+@media (max-width: 480px) {
+    .notification-modal .modal {
+        width: 90% !important;
+        max-width: 90% !important;
+        max-height: 60vh !important;
+        margin: 10px auto;
+        border-radius: 8px !important;
+        
+        
+    }
+
+    /* Header: Notifications left, Close right */
+    .notification-modal .notif-head {
+        display: flex;
+        justify-content: space-between;
+        /* pushes left + right apart */
+        align-items: center;
+        padding: 10px 12px;
+        background: #009fe3;
+        /* keep your blue */
+        color: #fff;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        margin: -12px -12px 0 -12px;
+    }
+
+    .notification-modal .notif-head .title {
+        flex: none;
+        /* don’t stretch */
+        font-size: 0.95rem;
+        text-align: left;
+        /* stay left */
+        margin-top: 8px;
+        margin-left: -200px;
+    }
+
+    .notification-modal .notif-head .close {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        margin-left: auto;
+        margin-top: -33px;
+        /* ensures right alignment */
+    }
+
+
+    .notification-modal .notif-content {
+        max-height: 300px;
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+
+    .notification-modal .notif-note {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+
+    .notification-modal .notif-note .msg .time {
+        font-size: 0.7rem;
+    }
+
+    .notification-modal .notif-actions {
+        padding: 8px;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .notification-modal .notif-actions .primary,
+    .notification-modal .notif-actions .secondary {
+        width: 100%;
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+}
+
+/* ============================
+   🖥️ Desktop View (≥900px)
+   ============================ */
+@media (min-width: 900px) {
+    .notification-modal .modal {
+        width: 600px;
+        max-width: 600px;
+        max-height: 80vh !important;
+        margin: 40px auto;
+        border-radius: 12px;
+    }
+
+    .notification-modal .notif-head {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 20px;
+        background: #009fe3;
+        color: #fff;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+
+    .notification-modal .notif-head .title {
+        font-size: 1.25rem;
+        margin: 0;
+    }
+
+    .notification-modal .notif-head .close {
+        font-size: 1rem;
+        padding: 6px 12px;
+        background: transparent;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .notification-modal .notif-content {
+        max-height: 500px;
+        font-size: 1rem;
+        padding: 16px 20px;
+        overflow-y: auto;
+    }
+
+    .notification-modal .notif-note {
+        padding: 12px 16px;
+        font-size: 0.95rem;
+    }
+
+    .notification-modal .notif-actions {
+        padding: 14px 20px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+
+    .notification-modal .notif-actions .primary,
+    .notification-modal .notif-actions .secondary {
+        width: auto; /* buttons side-by-side */
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+
+
+
+/* Animation */
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Header strip for the patient */
+.welcome {
+    background: rgba(255, 255, 255, .94);
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 4px 14px rgba(2, 6, 23, .06);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.welcome h2 {
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: .2px;
+}
+
+.welcome p {
+    margin: 4px 0 0;
+    color: #475569;
+    font-size: 14px;
+}
+
+.welcome .grow {
+    flex: 1;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.welcome-btn {
+    position: relative;
+    border: 0;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-weight: 700;
+    cursor: pointer;
+    background: #0ea5e9;
+    color: #fff;
+    transition: transform .05s ease, background .2s ease;
+}
+
+.welcome-btn span {
+    font-size: 12px;
+    margin: 0;
+    color: gray;
+}
+
+.welcome-btn:hover {
+    background: #0369a1;
+}
+
+.welcome-btn:active {
+    transform: translateY(1px);
+}
+
+.welcome-btn.alt {
+    background: #f8fafc;
+    color: #0f172a;
+    border: 1px solid #e2e8f0;
+    font-weight: 600;
+}

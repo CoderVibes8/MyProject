@@ -1,0 +1,260 @@
+/* === Modal Centering === */
+#personnel_appointment_detailsModal .modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; /* vertical centering */
+}
+
+/* === Modal Content === */
+#personnel_appointment_detailsModal .modal-content {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    background: #fff;
+    overflow: hidden;
+}
+
+/* === Modal Header === */
+#personnel_appointment_detailsModal .modal-header {
+    background: #f8f9fa;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 15px 20px;
+}
+
+
+#personnel_appointment_detailsModal .modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Close Button */
+#personnel_appointment_detailsModal .custom-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
+}
+
+#personnel_appointment_detailsModal .custom-close:hover {
+    color: #000;
+}
+
+/* === Modal Body === */
+#personnel_appointment_detailsModal .modal-body {
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* === Card Grid Layout === */
+#personnel_appointment_detailsModal .record-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* two cards per row */
+    gap: 15px 30px; /* row-gap / column-gap */
+}
+
+/* Individual Cards */
+#personnel_appointment_detailsModal .record-item {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 12px 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Labels */
+#personnel_appointment_detailsModal .record-item strong {
+    color: #444;
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Card Values */
+#personnel_appointment_detailsModal .record-item span,
+#personnel_appointment_detailsModal .record-item a {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    text-align: left;
+}
+
+/* PDF Button */
+#personnel_appointment_detailsModal .record-item a.btn {
+    margin-top: 6px;
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+/* PDF Placeholder */
+#personnel_appointment_detailsModal .pdf-status {
+    font-style: italic;
+    color: #777;
+    font-size: 12px;
+}
+
+/* Expense Highlight */
+#personnel_appointment_detailsModal .expense-amount {
+    color: #e63946;
+    font-weight: 700;
+}
+
+/* Status Badge */
+#personnel_appointment_detailsModal .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+#personnel_appointment_detailsModal .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Status Variants */
+#personnel_appointment_detailsModal .status-confirmed {
+    background: #e6f9f0;
+    color: #2ca76d;
+}
+
+#personnel_appointment_detailsModal .status-confirmed .status-dot {
+    background: #2ca76d;
+}
+
+#personnel_appointment_detailsModal .status-pending {
+    background: #fff8e6;
+    color: #d99a00;
+}
+
+#personnel_appointment_detailsModal .status-pending .status-dot {
+    background: #d99a00;
+}
+
+#personnel_appointment_detailsModal .status-cancelled {
+    background: #fdeaea;
+    color: #d93025;
+}
+
+#personnel_appointment_detailsModal .status-cancelled .status-dot {
+    background: #d93025;
+}
+
+/* 📱 Mobile (≤480px) — Two equal-width cards per row */
+@media (max-width: 480px) {
+    #personnel_appointment_detailsModal .modal-dialog {
+        height: auto;
+        margin: 10px;
+        
+    }
+
+    #personnel_appointment_detailsModal .modal-content {
+        width: 100%;
+        border-radius: 10px;
+        max-height: 90vh;
+        height: 100%;
+    }
+
+    #personnel_appointment_detailsModal .modal-header {
+        padding: 12px 15px;
+    }
+
+    #personnel_appointment_detailsModal .modal-title {
+        font-size: 15px;
+    }
+
+    #personnel_appointment_detailsModal .modal-body {
+        padding: 12px;
+        
+    }
+
+    /* 🧩 Two equal cards per row */
+    #personnel_appointment_detailsModal .record-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+        gap: 12px; /* space between cards */
+        align-items: stretch; /* makes all cards same height */
+        
+    }
+
+    /* 📋 Individual card styling */
+    #personnel_appointment_detailsModal .record-item {
+        background: #fff;
+        border-radius: 8px;
+        padding: 10px 12px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%; /* ensures equal height across the row */
+    }
+
+    /* Label text (top part) */
+    #personnel_appointment_detailsModal .record-item strong {
+        font-size: 13px;
+        color: #444;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 3px;
+    }
+
+    /* Value text */
+    #personnel_appointment_detailsModal .record-item span,
+    #personnel_appointment_detailsModal .record-item a {
+        font-size: 12.5px;
+        color: #333;
+        font-weight: 500;
+        text-align: left;
+        word-break: break-word;
+    }
+
+    /* Subtext / description */
+    #personnel_appointment_detailsModal .pdf-status {
+        font-size: 11px;
+        color: #777;
+        font-style: italic;
+        margin-top: 3px;
+    }
+
+    /* Expense highlight */
+    #personnel_appointment_detailsModal .expense-amount {
+        color: #e63946;
+        font-weight: 700;
+        font-size: 13px;
+    }
+
+    /* Status badge */
+    #personnel_appointment_detailsModal .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 12px;
+        font-weight: 600;
+        border-radius: 6px;
+        padding: 3px 6px;
+    }
+
+    #personnel_appointment_detailsModal .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+}

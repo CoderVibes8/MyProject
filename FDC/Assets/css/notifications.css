@@ -1,0 +1,61 @@
+/* Modal Custom Styling */
+.modal-header.bg-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border-bottom: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-title {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.modal-content {
+    border-radius: 1rem;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* List Group Styling */
+.modal-body .list-group-item {
+    border: none;
+    border-radius: 0.5rem;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    transition: all 0.2s ease-in-out;
+}
+
+.modal-body .list-group-item:hover {
+    background-color: #eef4ff;
+    cursor: pointer;
+}
+
+.list-group-item .fw-bold {
+    color: #333;
+}
+
+.badge.bg-warning {
+    font-size: 0.85rem;
+    padding: 0.5em 0.75em;
+}
+
+/* Modal Footer Buttons */
+.modal-footer .btn-primary {
+    background-color: #007bff;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.25rem;
+}
+
+.modal-footer .btn-secondary {
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.25rem;
+}
+
+/* Optional: Add a scrollbar for long content */
+.modal-body {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+
